@@ -1,1 +1,43 @@
-@seed-color:#caebe9;
+// @seed-color:#adcdd3;
+@seed-color: rgb(210,226,229);
+@grid-float-breakpoint: 992px;
+
+
+/* tabs http://css.maxdesign.com.au/listamatic/horizontal03.htm */
+
+.page-header ul {
+  padding-left: 0;
+  margin-left: 0;
+  margin-right: 0; 
+  padding-left: 0;
+  background-color: #036;
+  color: #fff;
+  float: left;
+  width: 100%;
+}
+.page-header > a.noarrow:hover { text-decoration: none; } 
+
+.page-header ul li { display: inline; }
+.page-header ul li:first-child a { font-weight: bold; }
+.page-header ul li a {
+  padding: 0.2em 1em;
+  background-color: #036;
+  color: #fff;
+  text-decoration: none;
+  float: left;
+  border-right: 1px solid #fff;
+}
+
+.page-header ul li.selected a {
+  padding: 0.2em 1em;
+  background-color: #d6e5f4;
+  color: #000;
+  text-decoration: none;
+  float: left;
+  border-right: 1px solid #fff;
+}
+
+.page-header ul li a:hover {
+  background-color: #369;
+  color: #fff;
+ }
