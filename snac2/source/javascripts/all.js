@@ -1,5 +1,8 @@
 //= require "jquery/jquery"
+//= require "jquery/jquery-migrate-1.2.1.min"
 //= require "jquery/jquery.hoverIntent"
+//= require "jquery/jquery.event.drag-2.2"
+//= require "jquery/jquery.jsonp-2.4.min"
 //= require "bootstrap/transition.js"
 //= require "bootstrap/alert.js"
 //= require "bootstrap/button.js"
@@ -12,6 +15,9 @@
 //= require "bootstrap/tooltip.js"
 //= require "bootstrap/popover.js"
 //= require "bootstrap/affix.js"
+//= require "slickgrid/slick.core.js"
+//= require "slickgrid/slick.grid.js"
+//= require "slick.snacmodel.js"
 
   $("label.advancedSearch").hide();
   $("form.cpfSearch").hoverIntent(function () {

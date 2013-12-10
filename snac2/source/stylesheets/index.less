@@ -8,6 +8,9 @@
 
 @import "snactabs.less";
 
+@import "slickgrid/slick.grid.css";
+@import "slickgrid/slick.pager.css";
+
 /* tabs http://css.maxdesign.com.au/listamatic/horizontal03.htm */
 
 .georgia {
@@ -24,4 +27,10 @@ body {
   background:@color;
   .contrast(@color);
   border-color:@color;
+}
+
+#myGrid, #myGrid div {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
 }
