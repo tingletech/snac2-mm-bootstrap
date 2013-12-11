@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:tmpl="xslt://template">
   <head>
     <meta charset="utf-8"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     <meta name="description" content=""></meta>
     <meta name="author" content=""></meta>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="icon" type="image/ico" href="favicon.ico" />
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png" />
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" />
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png" />
-<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
-<link rel="shortcut icon" href="favicon.png" />
-<link rel="icon" type="image/ico" href="favicon.ico" />
-
-    <title><%= data.page.title || "snac" %></title>
+    <title tmpl:change-value="html-title"><%= data.page.title || "snac" %></title>
 
     <%= stylesheet_link_tag "index" %>
     
@@ -21,7 +20,9 @@
     <!--[if lt IE 9]>
       <%= javascript_include_tag  "ie/html5shiv", "ie/respond.min.js" %>
     <![endif]-->
+    <script tmpl:replace-markup="google-tracking-code"/>
   </head>
+
 
   <body class="<%= page_classes %>">
 
@@ -40,7 +41,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="#">about</a></li>
-            <li><a href="#">prototype</a></li>
+            <li class="active"><a href="/xtf/search">prototype</a></li>
             <li><a href="#">news</a></li>
             <li><a href="#">resources</a></li>
           </ul>
@@ -57,5 +58,21 @@
     </div>
     <!-- /.container -->
     <%= javascript_include_tag  "all" %>
+    <script src="cpf2html/results.js"> </script>
+    <script tmpl:condition="autocomplete">
+  $(function() {
+    $("input#userInput").autocomplete({
+      source: "",  /* JSONP '?' turns to callback; term=letters gets added */
+      minLength: 3,
+      delay: 250
+    }).keydown(function(e) {            /* http://stackoverflow.com/questions/3785993/ */
+      if (e.keyCode === 13) {
+        $(this).autocomplete("close");
+        $(this).closest('form').trigger('submit');
+      }
+    });
+  });
+</script>
+
   </body>
 </html>

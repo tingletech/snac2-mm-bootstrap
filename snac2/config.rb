@@ -45,6 +45,8 @@
 #   end
 # end
 
+activate :directory_indexes
+
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
@@ -60,12 +62,18 @@ configure :build do
   activate :minify_javascript
 
   # Enable cache buster
-  activate :asset_hash, :ignore => %r{^stylesheets/fonts/.*}
+  # activate :asset_hash, :ignore => %r{^stylesheets/fonts/.*}
 
   # Use relative URLs
   activate :relative_assets
 
   # Or use a different image path
-  # set :http_path, "/Content/images/"
+  #set :http_path, "/Content/images/"
+
+  set :css_dir, 'cpf2html/mm-css'
+  # set :js_dir, 'cpf2html/mm-js'
+  set :images_dir, 'cpf2html/mm-images'
+
   activate :favicon_maker
+
 end

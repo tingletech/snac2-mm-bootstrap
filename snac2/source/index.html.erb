@@ -3,13 +3,14 @@ title: title
 ---
 
 <div class="tabs">
-<ul><li class="selected"><a>All</a></li><li><a href="/xtf/search?facet-entityType=person">Person</a></li><li><a href="/xtf/search?facet-entityType=family">Family</a></li><li><a href="/xtf/search?facet-entityType=corporateBody">Organization</a></li></ul>
+<ul tmpl:replace-markup="navigation"><li class="selected"><a>All</a></li><li><a href="/xtf/search?facet-entityType=person">Person</a></li><li><a href="/xtf/search?facet-entityType=family">Family</a></li><li><a href="/xtf/search?facet-entityType=corporateBody">Organization</a></li></ul>
 </div>
 <form methon="GET" action="/xtf/search" class="cpfSearch">
-<div class="top-facets"></div>
-<input id="userInput" type="text" size="27" title="enter a name or keywords" placeholder="enter a name or keywords" name="text" value="" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" />
+<div class="top-facets" tmpl:condition="top-facets">top facets</div>
+<a tmpl:condition="search" href="/xtf/search">☒ </a>
+<input id="userInput" type="text" size="27" title="enter a name or keywords" placeholder="enter a name or keywords" name="text" value="" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" tmpl:add-value="search"/>
 <input class="button" title="full text" type="submit" value="search" />
-<label class="advancedSearch" title="Advanced Search" style="display: none;"> 
+<label class="advancedSearch" title="Advanced Search" style="display: none;" tmpl:process-markup="sectionType"> 
 <i>advanced</i>… limit to <a title="EAC tag library" class="noarrow" href="https://spreadsheets.google.com/pub?key=0AmlczcEUr8GxdGRjeEJ6S2tBU0lmMjlDaWZZdFNiQmc&amp;hl=en&amp;output=html">section</a>
 
 <select name="sectionType">
@@ -28,24 +29,14 @@ title: title
 <option value="resourcerelation">&#160;&#160;&#160;&#160;&#160;&#160;resourceRelation</option>
 </select>
         </label>
+<div tmpl:condition="spelling"/>
 </form>
-<div class="row georgia">
-<div class="col-xs-5" >
-<b><i style="font-size: 85%;">1,987,654</i> identities</b>
-</div>
-<div class="col-xs-1 btn-group btn-group-xs">
-  <button type="button" class="btn btn-default">
-    <span class="glyphicon glyphicon-backward"></span>
-  </button>
-  <button type="button" class="btn btn-default">
-    <span class="glyphicon glyphicon-forward"></span>
-  </button>
-</div>
-<div class="col-xs-3" style=""><i style="font-size: 85%;">1,987,654</i> occupations
-</div>
-<div class="col-xs-3" style=""><i style="font-size: 85%;">1,987,654</i> subjects
-</div>
+<div class="row">
+  <div class="col-sm-6">
+    <ul xmlns:tmpl="xslt://template" tmpl:replace-markup="sumnav" class="btn-group" style="padding-left: 0; margin-bottom: 0;"><li type="button" class="btn btn-default active"><a href="search?sectionType=cpfdescription">2,338 identities </a></li><li type="button" class="btn btn-default "><a href="search?sectionType=cpfdescription;browse-json=facet-occupation">61 occupations</a></li><li type="button" class="btn btn-default "><a href="search?sectionType=cpfdescription;browse-json=facet-localDescription">567 subjects</a></li></ul>
+  </div>
+
+  <div class="col-sm-6 btn-group"><div tmpl:replace-markup="AZ">A B C D ... Z </div></div>
 </div>
 
-
-
+<div id="myGrid" style="width: 100%; height: 400px;" ></div>
