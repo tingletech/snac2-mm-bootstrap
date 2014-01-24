@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:tmpl="xslt://template">
+<html lang="en">
   <head>
     <meta charset="utf-8"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="icon" type="image/ico" href="favicon.ico" />
 
-    <title tmpl:change-value="html-title"><%= data.page.title || "snac" %></title>
+    <title><%= data.page.title || "snac" %></title>
 
     <%= stylesheet_link_tag "index" %>
     
@@ -20,7 +20,6 @@
     <!--[if lt IE 9]>
       <%= javascript_include_tag  "ie/html5shiv", "ie/respond.min.js" %>
     <![endif]-->
-    <script tmpl:replace-markup="google-tracking-code"/>
   </head>
 
 
@@ -59,20 +58,6 @@
     <!-- /.container -->
     <%= javascript_include_tag  "all" %>
     <script src="cpf2html/results.js"> </script>
-    <script tmpl:condition="autocomplete">
-  $(function() {
-    $("input#userInput").autocomplete({
-      source: "",  /* JSONP '?' turns to callback; term=letters gets added */
-      minLength: 3,
-      delay: 250
-    }).keydown(function(e) {            /* http://stackoverflow.com/questions/3785993/ */
-      if (e.keyCode === 13) {
-        $(this).autocomplete("close");
-        $(this).closest('form').trigger('submit');
-      }
-    });
-  });
-</script>
 
   </body>
 </html>

@@ -1,42 +1,59 @@
 ---
 title: title
 ---
-
-<div class="tabs">
-<ul tmpl:replace-markup="navigation"><li class="selected"><a>All</a></li><li><a href="/xtf/search?facet-entityType=person">Person</a></li><li><a href="/xtf/search?facet-entityType=family">Family</a></li><li><a href="/xtf/search?facet-entityType=corporateBody">Organization</a></li></ul>
-</div>
+<style> .nav-tabs-first > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus { background-color: #d6e5f4;}
+</style>
+<ul class="nav nav-tabs nav-tabs-first">
+  <li><a style="color: black; font-weight: bold; padding-left: 0;">Search by:</a></li>
+  <li class="active"><a href="#home" data-toggle="tab">All</a></li>
+  <li><a href="#profile" data-toggle="tab">Person</a></li>
+  <li><a href="#messages" data-toggle="tab">Family</a></li>
+  <li><a href="#settings" data-toggle="tab">Organization</a></li>
+</ul>
 <form methon="GET" action="/xtf/search" class="cpfSearch">
-<div class="top-facets" tmpl:condition="top-facets">top facets</div>
-<a tmpl:condition="search" href="/xtf/search">☒ </a>
-<input id="userInput" type="text" size="27" title="enter a name or keywords" placeholder="enter a name or keywords" name="text" value="" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" tmpl:add-value="search"/>
-<input class="button" title="full text" type="submit" value="search" />
-<label class="advancedSearch" title="Advanced Search" style="display: none;" tmpl:process-markup="sectionType"> 
+<div class="top-facets"></div>
+
+<input id="userInput" type="text" size="27" title="enter a name or keywords" placeholder="enter a name or keywords" name="text" value="" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+<input class="button" title="full text" type="submit" value="search">
+<label class="advancedSearch" title="Advanced Search" style="display: none;"> 
 <i>advanced</i>… limit to <a title="EAC tag library" class="noarrow" href="https://spreadsheets.google.com/pub?key=0AmlczcEUr8GxdGRjeEJ6S2tBU0lmMjlDaWZZdFNiQmc&amp;hl=en&amp;output=html">section</a>
 
 <select name="sectionType">
 <option value="" selected="selected">eac-cpf</option>
-<option value="control">&#160;&#160;control</option>
-<option value="cpfdescription" title="default" class="default" selected="selected">&#160;&#160;cpfDescription</option>
-<option value="identity">&#160;&#160;&#160;&#160;identity</option>
-<option value="description">&#160;&#160;&#160;&#160;description</option>
-<option value="existdates">&#160;&#160;&#160;&#160;&#160;&#160;existDates</option>
-<option value="bioghist">&#160;&#160;&#160;&#160;&#160;&#160;biogHist</option>
-<option value="generalcontext">&#160;&#160;&#160;&#160;&#160;&#160;generalContext</option>
-<option value="occupation">&#160;&#160;&#160;&#160;&#160;&#160;occupation</option>
-<option value="localdescription">&#160;&#160;&#160;&#160;&#160;&#160;localDescription</option>
-<option value="relation">&#160;&#160;&#160;&#160;relations</option>
-<option value="cpfrelation">&#160;&#160;&#160;&#160;&#160;&#160;cpfRelation</option>
-<option value="resourcerelation">&#160;&#160;&#160;&#160;&#160;&#160;resourceRelation</option>
+<option value="control">&nbsp;&nbsp;control</option>
+<option value="cpfdescription" title="default" class="default" selected="selected">&nbsp;&nbsp;cpfDescription</option>
+<option value="identity">&nbsp;&nbsp;&nbsp;&nbsp;identity</option>
+<option value="description">&nbsp;&nbsp;&nbsp;&nbsp;description</option>
+<option value="existdates">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;existDates</option>
+<option value="bioghist">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;biogHist</option>
+<option value="generalcontext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generalContext</option>
+<option value="occupation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;occupation</option>
+<option value="localdescription">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;localDescription</option>
+<option value="relation">&nbsp;&nbsp;&nbsp;&nbsp;relations</option>
+<option value="cpfrelation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cpfRelation</option>
+<option value="resourcerelation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourceRelation</option>
 </select>
-        </label>
-<div tmpl:condition="spelling"/>
+        <script>
+  $("label.advancedSearch").hide();
+  $("form.cpfSearch").hoverIntent(function () {
+    $("label.advancedSearch").css("display", "inline");
+  }, function () {
+    if ($("label.advancedSearch select").val() === 'cpfdescription') {
+      $("label.advancedSearch").fadeOut();
+    }
+  });
+        </script></label>
+
 </form>
-<div class="row">
-  <div class="col-sm-6">
-    <ul xmlns:tmpl="xslt://template" tmpl:replace-markup="sumnav" class="btn-group" style="padding-left: 0; margin-bottom: 0;"><li type="button" class="btn btn-default active"><a href="search?sectionType=cpfdescription">2,338 identities </a></li><li type="button" class="btn btn-default "><a href="search?sectionType=cpfdescription;browse-json=facet-occupation">61 occupations</a></li><li type="button" class="btn btn-default "><a href="search?sectionType=cpfdescription;browse-json=facet-localDescription">567 subjects</a></li></ul>
-  </div>
-
-  <div class="col-sm-6 btn-group"><div tmpl:replace-markup="AZ">A B C D ... Z </div></div>
-</div>
-
-<div id="myGrid" style="width: 100%; height: 400px;" ></div>
+<div><b>Browse or filter by:</b></div>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#home" data-toggle="tab">Featured</a></li>
+  <li><a href="#profile" data-toggle="tab">Name</a></li>
+  <li><a href="#messages" data-toggle="tab">Occupations</a></li>
+  <li><a href="#settings" data-toggle="tab">Subjects</a></li>
+</ul>
+<div>0 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+  <b>Show records with: </b>
+<span class="label label-primary">Biographies</span>
+<span class="label label-primary">Wikipedia Links</span>
+<span class="label label-primary">Collection Links</span></div>
