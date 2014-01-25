@@ -1,14 +1,13 @@
 ---
 title: title
 ---
-<style> .nav-tabs-first > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus { background-color: #d6e5f4;}
-</style>
 <ul class="nav nav-tabs nav-tabs-first">
-  <li><a style="color: black; font-weight: bold; padding-left: 0;">Search by:</a></li>
+  <li class="headspace"><b>Search by:</b></li>
   <li class="active"><a href="#home" data-toggle="tab">All</a></li>
-  <li><a href="#profile" data-toggle="tab">Person</a></li>
-  <li><a href="#messages" data-toggle="tab">Family</a></li>
-  <li><a href="#settings" data-toggle="tab">Organization</a></li>
+  <li><a href="#profile" data-toggle="tab">😀 Person</a></li>
+  <li><a href="#messages" data-toggle="tab">👪 Family</a></li>
+  <li><a href="#settings" data-toggle="tab">🏢 Organization</a></li>
+  <li class="pull-right" style="font-size: 200%;">1,234,234 names</li>
 </ul>
 <form methon="GET" action="/xtf/search" class="cpfSearch">
 <div class="top-facets"></div>
@@ -45,15 +44,57 @@ title: title
         </script></label>
 
 </form>
-<div><b>Browse or filter by:</b></div>
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#home" data-toggle="tab">Featured</a></li>
-  <li><a href="#profile" data-toggle="tab">Name</a></li>
-  <li><a href="#messages" data-toggle="tab">Occupations</a></li>
-  <li><a href="#settings" data-toggle="tab">Subjects</a></li>
-</ul>
-<div>0 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-  <b>Show records with: </b>
-<span class="label label-primary">Biographies</span>
-<span class="label label-primary">Wikipedia Links</span>
-<span class="label label-primary">Collection Links</span></div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="headspace"><b>Browse or filter by:</b></div>
+  </div>
+  <div class="col-md-6">
+    <div class="headspace pull-right">Show records with:
+      <span class="label label-primary">Biographies</span>
+      <span class="label label-primary">Wikipedia Links</span>
+      <span class="label label-primary">Collection Links</span>
+    </div>
+  </div>
+</div>
+    <ul class="nav nav-tabs nav-tabs-second">
+      <li class="active"><a href="#featured" data-toggle="tab">Featured</a></li>
+      <li><a href="#name" data-toggle="tab">Name</a></li>
+      <li><a href="#occupations" data-toggle="tab">Occupations</a></li>
+      <li><a href="#subjects" data-toggle="tab">Subjects</a></li>
+    </ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="featured">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Panel title <span class="pull-right">😀 </span></h3>
+          </div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Panel title</h3>
+          </div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane" id="name">
+    <div>0 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z </div>
+  </div>
+  <div class="tab-pane" id="occupations">Occupation categories are generated from various institutional schemas. Please <a href="">take a moment</a> let us know how useful these subjects are to you and how you could help us come up with a more useful way to browse our records by subject area.
+  </div>
+  <div class="tab-pane" id="subjects">Subject categories are generated from various institutional schemas. Please <a href="">take a moment</a> to let us know how useful these subjects are to you and how you could help us come up with a more useful way to browse our records by subject area.
+  </div>
+</div>

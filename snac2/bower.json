@@ -1,0 +1,24 @@
+{
+  "name": "snac2",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tingletech/snac2-mm-bootstrap",
+  "license": "BSD",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1",
+    "bootstrap": "3",
+    "jquery-migrate": "~1.2.1",
+    "jquery-hoverIntent": "*",
+    "jquery-jsonp": "~2.4.0",
+    "jquery.event.drag-drop": "~2.2.1",
+    "slickgrid": "~2.1.0"
+  }
+}

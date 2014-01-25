@@ -20,3 +20,5 @@ end
 
 gem "therubyracer"
 gem "less"
+
+gem 'middleman-bower'

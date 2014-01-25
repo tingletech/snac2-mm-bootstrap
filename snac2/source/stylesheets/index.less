@@ -1,4 +1,6 @@
-@import "bootstrap-theme.less"; // bootstrap
+// @import "bootstrap/less/bootstrap";
+@import "../../vendor/assets/bower/bootstrap/less/bootstrap";
+// @import "bootstrap-theme.less"; // bootstrap
 // @import "_1pxdeep.less"; // 1pxdeep theme
 @import "scheme.less"; // color scheme
 
@@ -35,3 +37,10 @@ body {
      -moz-box-sizing: content-box;
           box-sizing: content-box;
 }
+
+ .nav-tabs-first > li.active > a,
+        .nav-tabs-first > li.active > a:hover,
+        .nav-tabs-first > li.active > a:focus { background-color: #d6e5f4; }
+        .nav-tabs-second > li > a { padding-top: 5px !important; padding-bottom: 5px !important; }
+
+ .headspace { padding: 10px 15px 10px 0px; }
