@@ -17,7 +17,6 @@
 //= require "bootstrap/js/affix.js"
 //= require "slickgrid/slick.core.js"
 //= require "slickgrid/slick.grid.js"
-//= require "slick.snacmodel.js"
 
   $("label.advancedSearch").hide();
   $("form.cpfSearch").hoverIntent(function () {
