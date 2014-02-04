@@ -68,25 +68,48 @@ title: title
 <div class="tab-content">
   <div class="tab-pane active" id="featured">
     <div class="row">
-      <div class="col-md-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Panel title <span class="pull-right">😀 </span></h3>
+      <div class="col-md-12">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+        
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <%= image_tag "images/George_Washington.png" %>
+              <div class="carousel-caption">
+                <h1><a href="">George Washington, 1732-1799.</a></h1>
+                <p>Image Credit: <a href="http://en.wikipedia.org/wiki/File:Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg">Wikipedia</a></p>
+              </div>
+            </div>
+            <div class="item">
+              <%= image_tag "images/graph.png" %>
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item">
+              <%= image_tag "images/George_Washington.png" %>
+              <div class="carousel-caption">
+                <h1><a href="">George Washington, 1732-1799.</a></h1>
+                <p>Image Credit: <a href="http://en.wikipedia.org/wiki/File:Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg">Wikipedia</a></p>
+              </div>
+            </div>
           </div>
-          <div class="panel-body">
-            Panel content
-          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Panel title</h3>
-          </div>
-          <div class="panel-body">
-            Panel content
-          </div>
-        </div>
+
+
       </div>
     </div>
   </div>
