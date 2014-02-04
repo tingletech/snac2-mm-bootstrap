@@ -89,14 +89,14 @@
 <option value="resourcerelation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourceRelation</option>
 </select>
         <script>
-  $("label.advancedSearch").hide();
+/*  $("label.advancedSearch").hide();
   $("form.cpfSearch").hoverIntent(function () {
     $("label.advancedSearch").css("display", "inline");
   }, function () {
     if ($("label.advancedSearch select").val() === 'cpfdescription') {
       $("label.advancedSearch").fadeOut();
     }
-  });
+  }); */
         </script></label>
 
 </form>
@@ -114,11 +114,13 @@
 <span class="label label-primary">Wikipedia Links</span>
 <span class="label label-primary">Collection Links</span></div>
 
+<div id="myGrid" style="width: 100%; height: 400px;">slick me</div>
 
     </div>
     <!-- /.container -->
     <script src="../javascripts/all.js" type="text/javascript"></script>
-    <script src="cpf2html/results.js"> </script>
+    <script src="../javascripts/sample.js" type="text/javascript"></script>
+<script src="../javascripts/results.js" type="text/javascript"></script>
 
   </body>
 </html>
