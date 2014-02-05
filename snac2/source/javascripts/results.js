@@ -55,9 +55,10 @@ $(function () {
 
   var loadingIndicator = null;
 
-  console.log(window.data);
 
+  if ($("#myGrid").length) {
     grid = new Slick.Grid("#myGrid", window.data, columns, options);
+  } 
 
 
 });
