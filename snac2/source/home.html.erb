@@ -1,13 +1,13 @@
 ---
 title: title
 ---
+  <h3 class="tabheader">Search by:</h3>
 <ul class="nav nav-tabs nav-tabs-first">
-  <li class="headspace"><b>Search by:</b></li>
   <li class="active"><a href="#home" data-toggle="tab">All</a></li>
   <li><a href="#profile" data-toggle="tab">😀 Person</a></li>
   <li><a href="#messages" data-toggle="tab">👪 Family</a></li>
   <li><a href="#settings" data-toggle="tab">🏢 Organization</a></li>
-  <li class="pull-right" style="font-size: 200%;">1,234,234 names</li>
+  <li class="pull-right" style="font-size: 150%;">1,234,234 names</li>
 </ul>
 <form methon="GET" action="/xtf/search" class="cpfSearch">
 <div class="top-facets"></div>
@@ -33,21 +33,21 @@ title: title
 <option value="resourcerelation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourceRelation</option>
 </select>
         <script>
-  $("label.advancedSearch").hide();
+  /* $("label.advancedSearch").hide();
   $("form.cpfSearch").hoverIntent(function () {
     $("label.advancedSearch").css("display", "inline");
   }, function () {
     if ($("label.advancedSearch select").val() === 'cpfdescription') {
       $("label.advancedSearch").fadeOut();
     }
-  });
+  }); */
         </script></label>
 
 </form>
 
 <div class="row">
   <div class="col-md-6">
-    <div class="headspace"><b>Browse or filter by:</b></div>
+    <h3 class="limitsheader">Browse or filter by:</h3>
   </div>
   <div class="col-md-6">
     <div class="headspace pull-right">Show records with:
@@ -92,11 +92,7 @@ title: title
               </div>
             </div>
             <div class="item">
-              <%= image_tag "images/George_Washington.png" %>
-              <div class="carousel-caption">
-                <h1><a href="">George Washington, 1732-1799.</a></h1>
-                <p>Image Credit: <a href="http://en.wikipedia.org/wiki/File:Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg">Wikipedia</a></p>
-              </div>
+              <%= image_tag "images/screenshot_George_Washington.png" %>
             </div>
           </div>
 
@@ -115,10 +111,10 @@ title: title
   </div>
   <div class="tab-pane" id="name">
     <div>0 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z </div>
-    <div id="myGrid" style="width: 100%; height: 400px;">slick me</div>
   </div>
   <div class="tab-pane" id="occupations">Occupation categories are generated from various institutional schemas. Please <a href="">take a moment</a> let us know how useful these subjects are to you and how you could help us come up with a more useful way to browse our records by subject area.
   </div>
   <div class="tab-pane" id="subjects">Subject categories are generated from various institutional schemas. Please <a href="">take a moment</a> to let us know how useful these subjects are to you and how you could help us come up with a more useful way to browse our records by subject area.
   </div>
 </div>
+    <!-- div id="myGrid" style="width: 100%; height: 400px;">slick me</div -->

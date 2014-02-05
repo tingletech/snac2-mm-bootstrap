@@ -1,13 +1,13 @@
 ---
 title: title
 ---
-<style> .nav-tabs-first > li.active > a, 
+<!-- style> .nav-tabs-first > li.active > a, 
         .nav-tabs-first > li.active > a:hover, 
         .nav-tabs-first > li.active > a:focus { background-color: #d6e5f4; }
         .nav-tabs-second > li > a { padding-top: 5px !important; padding-bottom: 5px !important; }
-</style>
+</style -->
+<h3 class="tabheader">Search by:</h3>
 <ul class="nav nav-tabs nav-tabs-first">
-  <li class="headspace"><b>Search by:</b></li>
   <li class="active"><a href="#home" data-toggle="tab">All</a></li>
   <li><a href="#profile" data-toggle="tab">👦 Person</a></li>
   <li><a href="#messages" data-toggle="tab">👪 Family</a></li>
@@ -48,7 +48,13 @@ title: title
         </script></label>
 
 </form>
-<div class="headspace"><b>Browse or filter by:</b> <i>Results for "George Washington"</i>
+<div class="row">
+  <h3 class="col-md-3 limitsheader">Browse or filter by:</h3> 
+  <div class="col-md-9">
+    <div style="margin-top: 10px;">
+      <i>Results for "George Washington"</i>
+    </div>
+  </div>
 </div>
 <ul class="nav nav-tabs nav-tabs-second" style="height: 31px;">
   <!-- li><a href="#home" data-toggle="tab">Featured</a></li -->

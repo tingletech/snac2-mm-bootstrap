@@ -1,8 +1,11 @@
-@import "bootstrap";
 @import "scheme.less"; // color scheme
+@import "bootstrap";
+// @import "_1pxdeep.less";
+
+@import "footer";
 
 // @seed-color:#adcdd3;
-@seed-color: rgb(210,226,229);
+// @seed-color: rgb(210,226,229);
 @grid-float-breakpoint: 992px;
 
 @import "snactabs.less";
@@ -21,12 +24,21 @@
 body {
   padding-top: 25px;
   padding-bottom: 25px;
+  background-color: #e7e7e5;
 }
 // used to apply scheme.less color scheme
 .code-color(@color) {
   background:@color;
   .contrast(@color);
   border-color:@color;
+}
+
+.main_content {
+    padding-top:29px;
+    background-color: #fff;
+    height: 100%;
+    .container;
+    .clearfix();
 }
 
 #myGrid, #myGrid div {
@@ -40,4 +52,6 @@ body {
         .nav-tabs-first > li.active > a:focus { background-color: #d6e5f4; }
         .nav-tabs-second > li > a { padding-top: 5px !important; padding-bottom: 5px !important; }
 
- .headspace { padding: 10px 15px 10px 0px; }
+.tabheader { float: left; display: inline; padding: 0px; margin: 6px 15px 0px 0px; }
+
+.limitsheader { margin-top: 5px; } 
