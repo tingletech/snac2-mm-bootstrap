@@ -29,11 +29,11 @@ $(function () {
   var entityTypeFormatter = function (row, cell, value, columnDef, dataContext) {
     var type = dataContext['facet-entityType'];
     if (type == 'person') {
-        return '👦';
+        return '&#x1F466'; // 👦' 1F466
     } else if (type == 'corporateBody') {
-        return '🏢';
+        return '&#x1F3E2;' // 🏢' 1F3E2
     } else if (type == 'family') {
-        return '👪';
+        return '&#x1F46A;' // 👪' 1F46A
     }
   }
 
