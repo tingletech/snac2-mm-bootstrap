@@ -20,7 +20,7 @@
 //= require "store.js/store.js"
 
   $("label.advancedSearch").hide();
-  $("form.cpfSearch").hoverIntent(function () {
+  $("#search_by form").hoverIntent(function () {
     $("label.advancedSearch").css("display", "inline");
   }, function () {
     if ($("label.advancedSearch select").val() === 'cpfdescription') {

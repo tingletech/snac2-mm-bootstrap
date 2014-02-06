@@ -1,13 +1,13 @@
 <div id="search_by">
-  <h3 class="tabheader">Search by:</h3>
-  <ul class="nav nav-tabs nav-tabs-first">
+  <h3>Search by:</h3>
+  <ul>
     <li class="active"><a href="#home" data-toggle="tab">All</a></li>
     <li><a href="#profile" data-toggle="tab">😀 Person</a></li>
     <li><a href="#messages" data-toggle="tab">👪 Family</a></li>
     <li><a href="#settings" data-toggle="tab">🏢 Organization</a></li>
-    <li class="pull-right" style="font-size: 150%;"><%= data.page.results %></li>
+    <li class="count"><%= data.page.results %></li>
   </ul>
-  <form methon="GET" action="/xtf/search" class="cpfSearch snac-border-bottom">
+  <form method="GET" action="/xtf/search">
     <input
       id="userInput"
       type="text"
