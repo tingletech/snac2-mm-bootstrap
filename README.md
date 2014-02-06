@@ -5,15 +5,11 @@ Middleman project to build static HTML templates for XTF in SNAC
 
  * Install http://bower.io for web dev package magic
    * requires https://npmjs.org and http://nodejs.org
-   * ```
-     npm install -g bower
-     ```
+   * `npm install -g bower`
 
  * Install http://bundler.io for ruby package magic
    * requires http://rubygems.org and https://www.ruby-lang.org/
-   * ```
-     gem install bundler
-     ```
+   * `gem install bundler`
 
 ```
 bower install                  # install all web libraries required
