@@ -1,5 +1,5 @@
 //= require "jquery/jquery"
-//= require "jquery/jquery-migrate"
+//= require "jquery-migrate/jquery-migrate"
 //= require "jquery-hoverIntent/jquery.hoverIntent"
 //= require "jquery/jquery.event.drag-2.2.js"
 //= require "jquery-jsonp/src/jquery.jsonp"
