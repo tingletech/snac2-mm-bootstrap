@@ -80,6 +80,8 @@ configure :build do
 
   activate :favicon_maker
 
-  ignore "*.less"
+  ignore "stylesheets/identity.less"
+  ignore "stylesheets/searchby.less"
+  ignore "stylesheets/snacnav.less"
 
 end
