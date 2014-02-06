@@ -1,50 +1,8 @@
 ---
-title: title
+title: snac home page mockup
+results: 1,234,234 names
 ---
-  <h3 class="tabheader">Search by:</h3>
-<ul class="nav nav-tabs nav-tabs-first">
-  <li class="active"><a href="#home" data-toggle="tab">All</a></li>
-  <li><a href="#profile" data-toggle="tab">😀 Person</a></li>
-  <li><a href="#messages" data-toggle="tab">👪 Family</a></li>
-  <li><a href="#settings" data-toggle="tab">🏢 Organization</a></li>
-  <li class="pull-right" style="font-size: 150%;">1,234,234 names</li>
-</ul>
-<form methon="GET" action="/xtf/search" class="cpfSearch">
-<div class="top-facets"></div>
-
-<input id="userInput" type="text" size="27" title="enter a name or keywords" placeholder="enter a name or keywords" name="text" value="" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
-<input class="button" title="full text" type="submit" value="search">
-<label class="advancedSearch" title="Advanced Search" style="display: none;"> 
-<i>advanced</i>… limit to <a title="EAC tag library" class="noarrow" href="https://spreadsheets.google.com/pub?key=0AmlczcEUr8GxdGRjeEJ6S2tBU0lmMjlDaWZZdFNiQmc&amp;hl=en&amp;output=html">section</a>
-
-<select name="sectionType">
-<option value="" selected="selected">eac-cpf</option>
-<option value="control">&nbsp;&nbsp;control</option>
-<option value="cpfdescription" title="default" class="default" selected="selected">&nbsp;&nbsp;cpfDescription</option>
-<option value="identity">&nbsp;&nbsp;&nbsp;&nbsp;identity</option>
-<option value="description">&nbsp;&nbsp;&nbsp;&nbsp;description</option>
-<option value="existdates">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;existDates</option>
-<option value="bioghist">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;biogHist</option>
-<option value="generalcontext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generalContext</option>
-<option value="occupation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;occupation</option>
-<option value="localdescription">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;localDescription</option>
-<option value="relation">&nbsp;&nbsp;&nbsp;&nbsp;relations</option>
-<option value="cpfrelation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cpfRelation</option>
-<option value="resourcerelation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourceRelation</option>
-</select>
-        <script>
-  /* $("label.advancedSearch").hide();
-  $("form.cpfSearch").hoverIntent(function () {
-    $("label.advancedSearch").css("display", "inline");
-  }, function () {
-    if ($("label.advancedSearch select").val() === 'cpfdescription') {
-      $("label.advancedSearch").fadeOut();
-    }
-  }); */
-        </script></label>
-
-</form>
-
+<%= partial "searchby" %>
 <div class="row">
   <div class="col-md-6">
     <h3 class="limitsheader">Browse or filter by:</h3>
