@@ -80,4 +80,6 @@ configure :build do
 
   activate :favicon_maker
 
+  ignore "*.less"
+
 end
