@@ -100,6 +100,9 @@ GEM
     sprockets-bower (0.0.2)
     sprockets-helpers (1.0.1)
       sprockets (~> 2.0)
+    sprockets-less (0.6.0)
+      less (~> 2.4)
+      tilt (~> 1.1)
     sprockets-sass (1.0.2)
       sprockets (~> 2.0)
       tilt (~> 1.1)
@@ -123,5 +126,7 @@ DEPENDENCIES
   middleman-favicon-maker (~> 3.2)
   middleman-livereload (~> 3.1.0)
   ruby18_source_location
+  sprockets
+  sprockets-less
   therubyracer
   wdm (~> 0.1.0)

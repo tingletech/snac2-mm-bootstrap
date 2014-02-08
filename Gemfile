@@ -19,6 +19,8 @@ platforms :mri_18 do
 end
 
 gem "therubyracer"
+gem "sprockets"
+gem "sprockets-less"
 gem "less"
 
 gem 'middleman-bower'
