@@ -2,23 +2,43 @@
 (function() {
     $(function() {
         if (store.enabled) {
+            var state1 = "add to list";
+            var state2 = "remove from list";
+            // Will be true if bootstrap 3 is loaded, false if bootstrap 2 or no bootstrap
+            // http://stackoverflow.com/a/14768682/1763984
+            // var bootstrap3_enabled = (typeof $().emulateTransitionEnd == 'function');
+            var updateTitle = function(element, newTitle) {
+                $(element).attr('title', newTitle) // http://stackoverflow.com/a/20713610/1763984
+                    .tooltip('fixTitle')
+                    .data('bs.tooltip')
+                    .$tip.find('.tooltip-inner')
+                    .text(newTitle)
+            };
             var key = window.location.pathname;
             key = "localstars." + key;
             var starable = $('h1')[0];
             var fieldset = $('<fieldset class="rating"/>');
             var input = $('<input type="checkbox" id="localstar" name="localstar"/>');
-            var label = $('<label for="localstar" title="save to list">★ </label>');
+            var label = $('<label for="localstar">★</label>');
+            $(label).data('toggle', 'tooltip');
+            $(label).data('placement', 'right');
             $(fieldset).append(input);
             $(fieldset).append(label);
             $(starable).append(fieldset);
             if (store.get(key)) {
                 $(input).prop('checked', true);
+                $(label).attr('title', state2);
+            } else {
+                $(label).attr('title', state1);
             }
+            $(label).tooltip();
             $(input).on('change', function(){
                 if($(this).is(':checked') && !store.get(key)){
-                    store.set(key, 'True')
+                    store.set(key, 'True');
+                    updateTitle(label, state2);
                 } else {
                     store.remove(key);
+                    updateTitle(label, state1);
                 }
             });
         }
