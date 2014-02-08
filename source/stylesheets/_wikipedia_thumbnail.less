@@ -1,0 +1,26 @@
+/* http://stackoverflow.com/questions/16647443/how-should-i-set-this-caption-over-my-image-using-css/16647544#16647544 */
+.wikipedia_thumbnail {
+  float: left;
+  padding-right: 0.2em;
+  position: relative;
+  img {
+        max-width: 100%;
+        z-index: 1
+  }
+  div {
+        display: block;
+        width: 150px; 
+        position: absolute;
+        bottom: 0px; /*if using padding in the caption, match here */
+        left: 0;
+        z-index: 2;
+        margin: 0;
+        padding: 5px 0;
+        text-indent: 5px;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.4);
+    }
+    a {
+      color: #eee;
+    }
+}

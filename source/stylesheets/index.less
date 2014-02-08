@@ -6,7 +6,6 @@
 
 .snac-border-bottom { padding-left: 15px; border-bottom: solid #e7e7e5 3px; }
 
-@import "scheme.less"; // color scheme
 @import "bootstrap";
 
 @import "footer";
@@ -14,6 +13,9 @@
 @import "snacnav.less";
 @import "searchby.less";
 @import "identity.less";
+
+@import "_wikipedia_thumbnail.less";
+@import "_browsefilterby.less";
 
 // @seed-color:#adcdd3;
 // @seed-color: rgb(210,226,229);
@@ -36,12 +38,6 @@ body {
   padding-top: 25px;
   padding-bottom: 25px;
   background-color: #e7e7e5;
-}
-// used to apply scheme.less color scheme
-.code-color(@color) {
-  background:@color;
-  .contrast(@color);
-  border-color:@color;
 }
 
 .main_content {

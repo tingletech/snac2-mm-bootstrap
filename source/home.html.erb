@@ -3,19 +3,25 @@ title: snac home page mockup
 results: 1,234,234 names
 ---
 <%= partial "searchby" %>
+
+
+
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-8">
     <h3 class="limitsheader">Browse or filter by:</h3>
   </div>
-  <div class="col-md-6">
-    <div class="headspace pull-right">Show records with:
-      <span class="label label-primary">Biographies</span>
-      <span class="label label-primary">Wikipedia Links</span>
-      <span class="label label-primary">Collection Links</span>
+  <div class="col-md-4" style="text-align: right;">
+    <h4 style="display: inline;">Show records with:&nbsp;</h4>
+    <div class="btn-group-vertical btn-group-xs pull-right">
+      <button type="button" class="btn btn-primary">All</button>
+      <button type="button" class="btn btn-default">Biographies</button>
+      <button type="button" class="btn btn-default">Wikipedia Links</button>
+      <button type="button" class="btn btn-default">Collection Links</button>
     </div>
   </div>
 </div>
-    <ul class="nav nav-tabs nav-tabs-second">
+
+    <ul class="nav nav-tabs nav-tabs-second" style="float: left;">
       <li class="active"><a href="#featured" data-toggle="tab">Featured</a></li>
       <li><a href="#name" data-toggle="tab">Name</a></li>
       <li><a href="#occupations" data-toggle="tab">Occupations</a></li>
