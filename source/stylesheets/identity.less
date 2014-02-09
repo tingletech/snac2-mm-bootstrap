@@ -1,10 +1,29 @@
 div#identity {
-  h1 {
-    .row;
+  .relations {
+    .make-md-column(4);
+    .snac-border-right;
+  }
+  .others {
+    .make-md-column(3);
+  }
+  .name {
     .snac-border-bottom;
+    h1 {
+      float: left;
+    }
+    a {
+      text-decoration: none;
+      position: absolute;
+      border-bottom: solid 1px #fff;;
+      bottom: 0.5em;
+    }
+    a:hover {
+      border-bottom: dashed 1px #777;
+    }
   }
   > div {
     .row;
+    position: relative;
   }
   div.biog {
     .make-md-column(5);
@@ -19,13 +38,15 @@ div#identity {
         .make-md-column(8);
       }
     }
+    label, dt {
+      font-weight: normal;
+      color: #777;
+      margin-bottom: 0;
+    }
+    dd {
+      padding-left: 0.5em;
+    }
   }
-  .relations {
-    .make-md-column(4);
-    .snac-border-right;
-  }
-  .others {
-    .make-md-column(3);
-  }
+    h2, h3 { color: #777; }
 }
 
