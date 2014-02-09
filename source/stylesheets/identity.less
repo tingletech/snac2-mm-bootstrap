@@ -1,15 +1,14 @@
 div#identity {
-  .relations {
-    .make-md-column(4);
-    .snac-border-right;
+  // all children of this div are rows
+  > div {
+    .row;
+    position: relative;
   }
-  .others {
-    .make-md-column(3);
-  }
+  // div that holds the name/title of the identity
   .name {
     .snac-border-bottom;
     h1 {
-      float: left;
+      display: inline;
     }
     a {
       text-decoration: none;
@@ -21,32 +20,53 @@ div#identity {
       border-bottom: dashed 1px #777;
     }
   }
-  > div {
-    .row;
-    position: relative;
+  .relations {
+    .make-sm-column(5);
+    .make-md-column(4);
+    .make-lg-column(4);
+    border-top: 3px rgb(118, 176, 188) solid;
+    border-bottom: 3px rgb(118, 176, 188) solid;
+    @media (min-width: @screen-sm-min) { 
+      border: 0px;
+      border-left: 3px rgb(118, 176, 188) solid;
+    }
+    @media (min-width: @screen-md-min) {
+      border-right: 3px rgb(118, 176, 188) solid;
+    }
+  }
+  .others {
+    .make-sm-column(5);
+    .make-md-column(3);
+    .make-lg-column(3);
   }
   div.biog {
+    .make-sm-column(7);
     .make-md-column(5);
-    .snac-border-right;
+    .make-lg-column(5);
     div.facts {
       .row;
       border-bottom: solid #e7e7e5 3px;
       div.life {
-        .make-md-column(4);
+        .make-xs-column(4);
       }
       >div {
-        .make-md-column(8);
+        .make-xs-column(8);
       }
     }
     label, dt {
       font-weight: normal;
-      color: #777;
+      .text-muted;
       margin-bottom: 0;
     }
     dd {
       padding-left: 0.5em;
     }
   }
-    h2, h3 { color: #777; }
+  h2, h3 { 
+    .text-muted; 
+  }
+  .source {
+    .text-info;
+  }
 }
 

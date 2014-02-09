@@ -5,14 +5,15 @@
   position: relative;
   img {
         max-width: 100%;
-        z-index: 1
+        z-index: 1;
+       .img-thumbnail;
   }
   div {
         display: block;
         width: 150px; 
         position: absolute;
-        bottom: 0px; /*if using padding in the caption, match here */
-        left: 0;
+        bottom: 5px; /*if using padding in the caption, match here */
+        left: 5px;
         z-index: 2;
         margin: 0;
         padding: 5px 0;
@@ -21,6 +22,9 @@
         background: rgba(0, 0, 0, 0.4);
     }
     a {
-      color: #eee;
+        color: #eee;
+    }
+    a:hover div {
+        text-decoration: underline;
     }
 }
