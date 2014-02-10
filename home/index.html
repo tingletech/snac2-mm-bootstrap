@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     <meta name="description" content=""></meta>
     <meta name="author" content=""></meta>
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
-    <link rel="shortcut icon" href="favicon.png" />
-    <link rel="icon" type="image/ico" href="favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="//tingletech.github.io/snac2-mm-bootstrap/apple-touch-icon-144x144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="//tingletech.github.io/snac2-mm-bootstrap/apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="//tingletech.github.io/snac2-mm-bootstrap/apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="//tingletech.github.io/snac2-mm-bootstrap/apple-touch-icon-precomposed.png" />
+    <link rel="shortcut icon" href="//tingletech.github.io/snac2-mm-bootstrap/favicon.png" />
+    <link rel="icon" type="image/ico" href="//tingletech.github.io/snac2-mm-bootstrap/favicon.ico" />
 
     <title>snac home page mockup</title>
     <link href="../stylesheets/index.css" media="screen" rel="stylesheet" type="text/css" />
@@ -35,7 +35,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="../images/snac_spelled_out_300.svg" /></a>
+          <a class="navbar-brand" href="#"><img width="210px;" src="../images/snac_spelled_out_300.svg" /></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -55,10 +55,10 @@
   <h3>Search by:</h3>
   <ul>
     <li class="active"><a href="#home" data-toggle="tab">All</a></li>
-    <li><a href="#profile" data-toggle="tab">😀 Person</a></li>
-    <li><a href="#messages" data-toggle="tab">👪 Family</a></li>
-    <li><a href="#settings" data-toggle="tab">🏢 Organization</a></li>
-    <li class="count">1,234,234 names</li>
+    <li><a href="#profile" data-toggle="tab"><span class="snac-icon-person"/>Person</a></li>
+    <li><a href="#messages" data-toggle="tab"><span class="snac-icon-family"/>Family</a></li>
+    <li><a href="#settings" data-toggle="tab"><span class="snac-icon-organization"/>Organization</a></li>
+    <!-- li class="count">1,234,234 names</li -->
   </ul>
   <form method="GET" action="/xtf/search">
     <input
@@ -95,19 +95,25 @@
     </select>
   </form>
 </div>
+
+
+
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-8">
     <h3 class="limitsheader">Browse or filter by:</h3>
   </div>
-  <div class="col-md-6">
-    <div class="headspace pull-right">Show records with:
-      <span class="label label-primary">Biographies</span>
-      <span class="label label-primary">Wikipedia Links</span>
-      <span class="label label-primary">Collection Links</span>
+  <div class="col-md-4" style="text-align: right;">
+    <h4 style="display: inline;">Show records with:&nbsp;</h4>
+    <div class="btn-group-vertical btn-group-xs pull-right">
+      <button type="button" class="btn btn-primary">All</button>
+      <button type="button" class="btn btn-default">Biographies</button>
+      <button type="button" class="btn btn-default">Wikipedia Links</button>
+      <button type="button" class="btn btn-default">Collection Links</button>
     </div>
   </div>
 </div>
-    <ul class="nav nav-tabs nav-tabs-second">
+
+    <ul class="nav nav-tabs nav-tabs-second" style="float: left;">
       <li class="active"><a href="#featured" data-toggle="tab">Featured</a></li>
       <li><a href="#name" data-toggle="tab">Name</a></li>
       <li><a href="#occupations" data-toggle="tab">Occupations</a></li>
@@ -205,6 +211,11 @@
             </div>
         </div>
       </div>
+
+      <span class="visible-xs">xs</span>
+      <span class="visible-sm">sm</span>
+      <span class="visible-md">md</span>
+      <span class="visible-lg">lg</span>
     <!-- /.container -->
     <script src="../javascripts/all.js" type="text/javascript"></script>
     <script src="../javascripts/sample.js" charset="utf-8" type="text/javascript"></script>
