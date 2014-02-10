@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     <meta name="description" content=""></meta>
     <meta name="author" content=""></meta>
+
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png" />
@@ -21,72 +22,12 @@
     <![endif]-->
   </head>
 
-
   <body class="<%= page_classes %>">
-
-    <!-- Fixed navbar -->
-    <div id="snacnav" role="navigation">
-      <div>
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><%= image_tag "snac_spelled_out_300.svg", :width => '210px;' %></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#">about</a></li>
-            <li class="active"><a href="/xtf/search">prototype</a></li>
-            <li><a href="#">news</a></li>
-            <li><a href="#">resources</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" style="padding: 0px;"><%= image_tag "snac_logo_small.svg" %></a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+    <%= partial "navbar" %>
     <div class="main_content">
         <%= yield %>
     </div>
-        <div id="footer_body" class="footer_color" style="font-size: .8em;">
-          <p class="dashed">
-            Published by the <a href="http://iath.virginia.edu/" class="inactive">Institute for Advanced Technology in the Humanities</a> |
-            <a href="contact.html" class="inactive">Contact &gt;</a>
-            <br>
-            © 2013 Rectors and Visitors of the <a href="http://www.virginia.edu/" class="inactive">University of Virginia</a>
-          </p>
-          <p> 
-            Sponsors: <a href="http://www.mellon.org/" class="inactive">Andrew W. Mellon Foundation</a> | 
-            <a href="http://www.imls.gov/" class="inactive">The Institute for Museum and Library Services</a> |
-            <a href="http://www.neh.gov/" class="inactive">National Endowment for the Humanities</a>
-          </p>
-          <div class="dashed">
-            <a class="aright nth inactive" href="http://www.neh.gov/"><img class=" threex" src="http://socialarchive.iath.virginia.edu/dev/snac_design/images/neh_logo.png"></a>
-            <a class="aright tall nth inactive" href="http://www.imls.gov/"><img class="threex" style="max-height: 100%" src="http://socialarchive.iath.virginia.edu/dev/snac_design/images/imls_logo.gif"></a>
-            <a class="aright tall inactive" href="http://www.mellon.org/"><img src="http://socialarchive.iath.virginia.edu/dev/snac_design/images/mellon_logo.jpg" class="threex"></a>
-            <div style="clear: both;"></div>
-          </div>
-          <div>
-            <p>
-              <span class="gray">Collaborators: </span>
-              <a href="http://iath.virginia.edu/" class="inactive">UVa IATH</a> |
-              <a href="http://www.ischool.berkeley.edu/" class="inactive">UC Berkeley School of Information</a> | 
-              <a href="http://www.cdlib.org/" class="inactive">California Digital Library</a> | 
-              <a href="http://www.archives.gov/" class="inactive">National Archives and Records Administration</a>
-            </p>
-            <div>
-              <a class="aright nth inactive" href="http://www.archives.gov/"><img class=" threex" src="http://socialarchive.iath.virginia.edu/dev/snac_design/images/nara_logo.gif"></a>
-              <a class="aright tall nth inactive" href="http://www.cdlib.org/"><img class=" threex" src="http://socialarchive.iath.virginia.edu/dev/snac_design/images/cdl_logo.gif"></a>
-              <a class="aright tall nth inactive" href="http://www.ischool.berkeley.edu/"><img class="threex" src="http://socialarchive.iath.virginia.edu/dev/snac_design/images/ucbsia_logo.jpg"></a>
-              <a class="aright tall inactive" href="http://iath.virginia.edu/"><img src="http://socialarchive.iath.virginia.edu/dev/snac_design/images/iath_logo.png" class="threex"></a>
-              <div style="clear: both;"></div>
-            </div>
-        </div>
-      </div>
+    <%= partial "footer" %>
     <!-- /.container -->
     <%= javascript_include_tag  "all" %>
     <%= javascript_include_tag  "sample", "results", :charset => 'utf-8' %>
