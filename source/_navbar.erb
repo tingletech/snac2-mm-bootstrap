@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><%= image_tag "snac_spelled_out_300.svg", :width => '210px;' %></a>
+            <a class="navbar-brand" id="snacnav-logo-left" href="#" style="padding: 0px;"><%= image_tag "snac_logo_small.svg" %></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -17,8 +17,10 @@
             <li><a href="#">news</a></li>
             <li><a href="#">resources</a></li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" style="padding: 0px;"><%= image_tag "snac_logo_small.svg" %></a></li>
+          <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
+            <li>
+          <a class="navbar-brand" id="snacnav-logo-right" href="#"><%= image_tag "snac_spelled_out_300.svg" %></a>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

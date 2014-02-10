@@ -18,7 +18,25 @@
 //= require "slickgrid/slick.core.js"
 //= require "slickgrid/slick.grid.js"
 //= require "store.js/store.js"
+//= require "enquire/dist/enquire"
 
+
+  // swap SNAC logos on bigger screens
+  var swapImages = function() {
+    function swapNodes(a, b) { // http://stackoverflow.com/a/698440/1763984
+      var aparent= a.parentNode;
+      var asibling= a.nextSibling===b? a : a.nextSibling;
+      b.parentNode.insertBefore(a, b);
+      aparent.insertBefore(b, asibling);
+    }
+    var left = $("#snacnav-logo-left")[0];
+    var right = $("#snacnav-logo-right")[0];
+    console.log(left, right);
+    swapNodes(left, right);
+  };
+
+$(document).ready(function() {
+  // advanced search
   $("label.advancedSearch").hide();
   $("#search_by form").hoverIntent(function () {
     $("label.advancedSearch").css("display", "inline");
@@ -27,3 +45,21 @@
       $("label.advancedSearch").fadeOut();
     }
   });
+
+  // off canvas
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
+  });
+
+  enquire.register("screen and (min-width: 400px)", {
+    match : function() {
+      console.log("hey!");
+      swapImages();
+    },
+    unmatch : function() {
+      console.log("hey?");
+      swapImages();
+    }
+  });
+
+});
