@@ -24,3 +24,5 @@ gem "sprockets-less"
 gem "less"
 
 gem 'middleman-bower'
+
+gem 'htmlbeautifier'
