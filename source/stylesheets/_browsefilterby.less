@@ -13,25 +13,10 @@ div#browsefilterby {
       .make-lg-column(9);
       margin-top: 10px;
     }
-    ul.browsenav {
-      .make-sm-column(6);
-      .make-sm-column-pull(6);
-      .nav;
-      .nav-tabs;
-      border-bottom: 0;
-      > li > a {
-        padding-left: 5px;
-        padding-right: 5px;
-        @media (min-width: @screen-xs-min) {
-          padding-left: 10px;
-          padding-right: 10px;
-        }
-        @media (min-width: @screen-sm-min) {
-          padding-left: 15px;
-          padding-right: 15px;
-        }
-      }
-    }
+  }
+  div.tabbar {
+    .row;
+    border-bottom: 1px solid #dddddd;
     div.filternav {
       .make-sm-column(6);
       .make-sm-column-push(6);
@@ -44,11 +29,27 @@ div#browsefilterby {
       button.active {
         .btn-primary
       }
-
     }
-  }
-  div.tabbar {
-    .row;
-    border-bottom: 1px solid #dddddd;
+    div.browsenav {
+      .make-sm-column(6);
+      .make-sm-column-pull(6);
+      ul {
+        .nav;
+        .nav-tabs;
+        border-bottom: 0;
+        > li > a {
+          padding-left: 5px;
+          padding-right: 5px;
+          @media (min-width: @screen-xs-min) {
+            padding-left: 10x;
+            padding-right: 10px;
+          }
+          @media (min-width: @screen-lg-min) {
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+        }
+      }
+    }
   }
 }
