@@ -24,33 +24,33 @@
   </head>
 
   <body class="browse browse_index">
-        <!-- Fixed navbar -->
-    <div id="snacnav" role="navigation">
-      <div>
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-            <a class="navbar-brand" id="snacnav-logo-left" href="#" style="padding: 0px;"><img src="../images/snac_logo_small.svg" /></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#">about</a></li>
-            <li class="active"><a href="/xtf/search">prototype</a></li>
-            <li><a href="#">news</a></li>
-            <li><a href="#">resources</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
-            <li>
-          <a class="navbar-brand" id="snacnav-logo-right" href="#"><img src="../images/snac_spelled_out_300.svg" /></a>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+    <!-- Fixed navbar -->
+<div id="snacnav" role="navigation">
+  <div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id="snacnav-logo-left" href="#" style="padding: 0px;"><img src="../images/snac_logo_small.svg" /></a>
     </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#">about</a></li>
+        <li class="active"><a href="/xtf/search">prototype</a></li>
+        <li><a href="#">news</a></li>
+        <li><a href="#">resources</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
+        <li>
+          <a class="navbar-brand" id="snacnav-logo-right" href="#"><img src="../images/snac_spelled_out_300.svg" /></a>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
 
     <div class="main_content">
         <div id="search_by">
@@ -78,25 +78,26 @@
       aria-autocomplete="list"
       aria-haspopup="true">
     <input class="button" title="full text" type="submit" value="search">
-    <label class="advancedSearch" title="Advanced Search" style="display: none;"> 
-    <i>advanced</i>… limit to <a title="EAC tag library" class="noarrow" href="https://spreadsheets.google.com/pub?key=0AmlczcEUr8GxdGRjeEJ6S2tBU0lmMjlDaWZZdFNiQmc&amp;hl=en&amp;output=html">section</a>
-    <select name="sectionType">
-      <option value="" selected="selected">eac-cpf</option>
-      <option value="control">&nbsp;&nbsp;control</option>
-      <option value="cpfdescription" title="default" class="default" selected="selected">&nbsp;&nbsp;cpfDescription</option>
-      <option value="identity">&nbsp;&nbsp;&nbsp;&nbsp;identity</option>
-      <option value="description">&nbsp;&nbsp;&nbsp;&nbsp;description</option>
-      <option value="existdates">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;existDates</option>
-      <option value="bioghist">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;biogHist</option>
-      <option value="generalcontext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generalContext</option>
-      <option value="occupation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;occupation</option>
-      <option value="localdescription">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;localDescription</option>
-      <option value="relation">&nbsp;&nbsp;&nbsp;&nbsp;relations</option>
-      <option value="cpfrelation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cpfRelation</option>
-      <option value="resourcerelation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourceRelation</option>
-    </select>
-  </form>
-</div>
+    <label class="advancedSearch" title="Advanced Search" style="display: none;">
+      <i>advanced</i>… limit to
+      <a title="EAC tag library" class="noarrow" href="https://spreadsheets.google.com/pub?key=0AmlczcEUr8GxdGRjeEJ6S2tBU0lmMjlDaWZZdFNiQmc&amp;hl=en&amp;output=html">section</a>
+      <select name="sectionType">
+        <option value="" selected="selected">eac-cpf</option>
+        <option value="control">&nbsp;&nbsp;control</option>
+        <option value="cpfdescription" title="default" class="default" selected="selected">&nbsp;&nbsp;cpfDescription</option>
+        <option value="identity">&nbsp;&nbsp;&nbsp;&nbsp;identity</option>
+        <option value="description">&nbsp;&nbsp;&nbsp;&nbsp;description</option>
+        <option value="existdates">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;existDates</option>
+        <option value="bioghist">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;biogHist</option>
+        <option value="generalcontext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generalContext</option>
+        <option value="occupation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;occupation</option>
+        <option value="localdescription">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;localDescription</option>
+        <option value="relation">&nbsp;&nbsp;&nbsp;&nbsp;relations</option>
+        <option value="cpfrelation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cpfRelation</option>
+        <option value="resourcerelation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourceRelation</option>
+      </select>
+    </form>
+  </div>
 <div id="browsefilterby">
   <div>
     <h3>Browse or filter by:</h3>
@@ -106,23 +107,25 @@
   </div>
   <div class="tabbar">
     <div class="filternav">
-      <small>Show records with: </small>
-      <button type="button" class="active">All</button>
-      <button type="button">Biographies</button>
-      <button type="button">Wikipedia Links</button>
-      <button type="button" class="btn btn-default">Collection Links</button>
+      <small>Show records with:
+      </small>
+      <div>
+        <button type="button" class="active">All</button>
+        <button type="button">Biographies</button>
+        <button type="button">Wikipedia Links</button>
+        <button type="button" class="disabled">Collection Links</button>
+      </div>
     </div>
-    <ul class="browsenav">
-      <li class="active"><a href="">Featured</a></li>
-      <li><a href="">Name</a></li>
-      <li><a href="">Occupation</a></li>
-      <li class="disabled"><a href="">Subject</a></li>
-    </ul>
+    <div class="browsenav">
+      <ul>
+        <li class="active"><a href="">Featured</a></li>
+        <li><a href="">Name</a></li>
+        <li><a href="">Occupation</a></li>
+        <li class="disabled"><a href="">Subject</a></li>
+      </ul>
+    </div>
   </div>
 </div>
-
-
-
 
     </div>
             <div id="footer_body" class="footer_color" style="font-size: .8em;">
