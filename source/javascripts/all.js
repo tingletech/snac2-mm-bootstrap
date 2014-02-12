@@ -31,7 +31,6 @@
     }
     var left = $("#snacnav-logo-left")[0];
     var right = $("#snacnav-logo-right")[0];
-    console.log(left, right);
     swapNodes(left, right);
   };
 
@@ -53,11 +52,9 @@ $(document).ready(function() {
 
   enquire.register("screen and (min-width: 400px)", {
     match : function() {
-      console.log("hey!");
       swapImages();
     },
     unmatch : function() {
-      console.log("hey?");
       swapImages();
     }
   });
