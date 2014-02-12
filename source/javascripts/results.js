@@ -1,6 +1,8 @@
 $(function () { 
 
-    $("label.advancedSearch").hide();
+  // this hide the advanced search
+  // 
+  $("label.advancedSearch").hide();
   $("form.cpfSearch").hoverIntent(function () {
     $("label.advancedSearch").css("display", "inline");
   }, function () {
@@ -9,6 +11,8 @@ $(function () {
     }
   });
 
+  // slick grid
+  // 
   var storyTitleFormatter = function (row, cell, value, columnDef, dataContext) {
     s ="<a href='" + dataContext["path"].replace('default:', '/xtf/view?docId=') + "'>" +
               dataContext["identity"] + "</a>";
@@ -79,9 +83,8 @@ $(function () {
 
   var loadingIndicator = null;
 
-
-  if ($("#myGrid").length) {
-    grid = new Slick.Grid("#myGrid", window.data, columns, options);
+  if ($("[data-snac-grid]").length) {
+    grid = new Slick.Grid("[data-snac-grid]", window.data, columns, options);
   } 
 
 
