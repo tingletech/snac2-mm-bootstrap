@@ -16,6 +16,7 @@
 //= require "bootstrap/js/popover.js"
 //= require "bootstrap/js/affix.js"
 //= require "slickgrid/slick.core.js"
+//= require "slick.snacmodel.js"
 //= require "slickgrid/slick.grid.js"
 //= require "store.js/store.js"
 //= require "enquire/dist/enquire"

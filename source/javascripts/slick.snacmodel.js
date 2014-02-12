@@ -4,7 +4,7 @@
    * Right now, it's hooked up to load Hackernews stories, but can
    * easily be extended to support any JSONP-compatible backend that accepts paging parameters.
    */
-  function RemoteModel() {
+  function RemoteModel(opts) {
     // private
     var PAGESIZE = 25;
     var data = {length: 0};
@@ -17,7 +17,6 @@
     // events
     var onDataLoading = new Slick.Event();
     var onDataLoaded = new Slick.Event();
-
 
     function init() {
     }
@@ -73,10 +72,11 @@
         onDataLoaded.notify({from: from, to: to});
         return;
       }
+      var URL = opts.url || document.URL;
       // does document.URL have a query string?
       var existsQuery;
       // http://stackoverflow.com/a/1789952/1763984
-      if (~document.URL.indexOf('?')){
+      if (~URL.indexOf('?')){
         existsQuery="&";
       } else {
         existsQuery="?";
@@ -84,10 +84,10 @@
 
       // terminal `#' in document.URL
       var baseUrl;
-      if (document.URL.charAt(document.URL.length-1) == '#') {
-        baseUrl = document.URL.substring(0, document.URL.length - 1);
+      if (URL.charAt(URL.length-1) == '#') {
+        baseUrl = URL.substring(0, URL.length - 1);
       } else {
-        baseUrl = document.URL;
+        baseUrl = URL;
       }
 
       var url = baseUrl + existsQuery + "rmode=slickgrid&startDoc=" + (fromPage * PAGESIZE + 1);
