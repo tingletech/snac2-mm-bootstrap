@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="icon" type="image/ico" href="favicon.ico" />
 
-    <title>title</title>
+    <title>snac search results</title>
     <link href="../stylesheets/index.css" media="screen" rel="stylesheet" type="text/css" />
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -60,7 +60,7 @@
     <li><a href="#profile" data-toggle="tab"><span class="snac-icon-person"/>Person</a></li>
     <li><a href="#messages" data-toggle="tab"><span class="snac-icon-family"/>Family</a></li>
     <li><a href="#settings" data-toggle="tab"><span class="snac-icon-organization"/>Organization</a></li>
-    <!-- li class="count">1,324 names</li -->
+    <!-- li class="count">Showing 1,336 results for "Washington, George, 1732-1799."</li -->
   </ul>
   <form method="GET" action="/xtf/search">
     <input
@@ -71,7 +71,7 @@
       a name or keywords"
       placeholder="enter a name or keywords"
       name="text"
-      value="George Washington!"
+      value="Washington, George, 1732-1799."
       class="ui-autocomplete-input"
       autocomplete="off"
       role="textbox"
@@ -98,27 +98,40 @@
       </select>
     </form>
   </div>
-<div class="row">
-  <h3 class="col-md-3 limitsheader">Browse or filter by:</h3>
-  <div class="col-md-9">
-    <div style="margin-top: 10px;">
-      <i>Results for "George Washington"</i>
+<div id="browsefilterby">
+  <div>
+    <h3>Browse or filter by:</h3>
+    <div class="result_summary">
+      <i>Showing results for "some search"</i>
+    </div>
+  </div>
+  <div class="tabbar">
+    <div class="filternav">
+      <small>Show records with:
+      </small>
+      <ul>
+        <li><a href="#" class="active" role="button">All</a></li>
+        <li><a href="#" role="button">Biographies</a></li>
+        <li><a href="#" role="button">Wikipedia Links</a></li>
+        <li><a href="#" class="disabled" role="button">Collection Links</a></li>
+      </ul>
+      <span/><!-- this span to prepend select/option to -->
+    </div>
+    <div class="browsenav">
+      <ul>
+        <li><a href="">Featured</a></li>
+        <li class="active"><a href="">Name</a></li>
+        <li><a href="">Occupation</a></li>
+        <li class="disabled"><a href="">Subject</a></li>
+      </ul>
     </div>
   </div>
 </div>
-<ul class="nav nav-tabs nav-tabs-second" style="height: 31px;">
-  <!-- li><a href="#home" data-toggle="tab">Featured</a></li -->
-  <li class="active"><a href="#name" data-toggle="tab">Name</a></li>
-  <li><a href="#occupations" data-toggle="tab">Occupations</a></li>
-  <li><a href="#settings" data-toggle="tab">Subjects</a></li>
-</ul>
-<div class="pull-right">
-  <b>Show records with:
-  </b>
-  <span class="label label-primary">Biographies</span>
-  <span class="label label-primary">Wikipedia Links</span>
-  <span class="label label-primary">Collection Links</span></div>
-<div id="myGrid" style="width: 100%; height: 400px;">slick me</div>
+
+    <div 
+      data-snac-grid='{"url":"http://socialarchive.iath.virginia.edu:8888/xtf/search?text=Washington%2C+George%2C+1732-1799.&sectionType=cpfdescription"}'>
+      <div class="alert alert-danger">Javascript failed.  Please contact the system operator.</div>
+    </div>
 
     </div>
             <!-- div id="footer_body" class="footer_color" style="font-size: .8em;">
