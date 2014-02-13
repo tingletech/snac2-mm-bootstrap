@@ -1,15 +1,12 @@
 ---
 title: snac home page mockup
-results: 1,234,234 names
+results: Showing 1,234,234 names
 ---
 <%= partial "searchby" %>
 <%= partial "browsefilterby" %>
+<%= partial "AZletters" %>
 
-<div class="row">
-  <div class="col-xs-12">
-    <%= partial "AZletters" %>
-    <div style="width: 100%; height: 400px;" data-snac-grid='{"url":"http://socialarchive.iath.virginia.edu:8888/xtf/search?rmode=slickgrid&startDoc=1&sortGroupsBy=totalDocs&facet-identityAZ=A"}'>
+    <div 
+      data-snac-grid='{"url":"http://socialarchive.iath.virginia.edu:8888/xtf/search?rmode=slickgrid&startDoc=1&sortGroupsBy=totalDocs&facet-identityAZ=A"}'>
       <div class="alert alert-danger">Javascript failed.  Please contact the system operator.</div>
     </div>
-  </div>
-</div>
