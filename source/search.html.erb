@@ -1,27 +1,12 @@
 ---
-title: title
-search: George Washington!
-results: 1,324 names
+title: snac search results
+search: Washington, George, 1732-1799.
+results: Showing 1,336 results for "Washington, George, 1732-1799."
 ---
 <%= partial "searchby" %>
-<div class="row">
-  <h3 class="col-md-3 limitsheader">Browse or filter by:</h3>
-  <div class="col-md-9">
-    <div style="margin-top: 10px;">
-      <i>Results for "George Washington"</i>
+<%= partial "browsefilterby" %>
+
+    <div 
+      data-snac-grid='{"url":"http://socialarchive.iath.virginia.edu:8888/xtf/search?text=Washington%2C+George%2C+1732-1799.&sectionType=cpfdescription"}'>
+      <div class="alert alert-danger">Javascript failed.  Please contact the system operator.</div>
     </div>
-  </div>
-</div>
-<ul class="nav nav-tabs nav-tabs-second" style="height: 31px;">
-  <!-- li><a href="#home" data-toggle="tab">Featured</a></li -->
-  <li class="active"><a href="#name" data-toggle="tab">Name</a></li>
-  <li><a href="#occupations" data-toggle="tab">Occupations</a></li>
-  <li><a href="#settings" data-toggle="tab">Subjects</a></li>
-</ul>
-<div class="pull-right">
-  <b>Show records with:
-  </b>
-  <span class="label label-primary">Biographies</span>
-  <span class="label label-primary">Wikipedia Links</span>
-  <span class="label label-primary">Collection Links</span></div>
-<div id="myGrid" style="width: 100%; height: 400px;">slick me</div>
