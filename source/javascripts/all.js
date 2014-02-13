@@ -20,6 +20,7 @@
 //= require "slickgrid/slick.grid.js"
 //= require "store.js/store.js"
 //= require "enquire/dist/enquire"
+//= require "jquery.mobilemenu/jquery.mobilemenu.js"
 
 
   // swap SNAC logos on bigger screens
@@ -59,5 +60,10 @@ $(document).ready(function() {
       swapImages();
     }
   });
-
+  // responsive select
+  $('div.filternav ul').mobileMenu({
+    "prependTo": $('div.filternav span'),
+    "topOptionText" : false,
+    "combine" : false
+  });
 });

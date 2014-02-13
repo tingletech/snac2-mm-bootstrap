@@ -21,7 +21,8 @@
     "jquery.event.drag-drop": "~2.2.1",
     "slickgrid": "~2.1.0",
     "store.js": "~1.3.15",
-    "enquire": "~2.1.0"
+    "enquire": "~2.1.0",
+    "jquery.mobilemenu": "*"
   },
   "resolutions": {
     "jquery": "1"
