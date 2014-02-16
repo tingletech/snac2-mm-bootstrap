@@ -16,6 +16,21 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+        a:link {
+		color:#000;
+		color:#FFF;
+	}
+        a:visited {
+		color:#FFF;
+	}
+        a:hover {
+		background-color: rgba( 256, 256, 256, 0.8 );
+		color:#000;
+                text-decoration: none;
+	}
+        a:active {
+		color:#FFF;
+	}
 }
 .alphascroll:active {
 	background-color: rgba( 0, 0, 0, 0.4);
@@ -23,9 +38,9 @@
 }
 .alphascroll {
 	background-color: rgba( 0, 0, 0, 0.2);
-	color: #fff;
+	color: #999;
 }
-.alphascroll li {
+.alphascroll li, .alphascroll a:link {
 	display: block;
 	width: 1em;
 	text-align: center;
