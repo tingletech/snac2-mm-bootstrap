@@ -26,3 +26,5 @@ gem "less"
 gem 'middleman-bower'
 
 gem 'htmlbeautifier'
+
+gem 'middleman-gh-pages'
