@@ -15,4 +15,8 @@
 # Ignore Sass' cache
 /.sass-cache
 
-/vendo
+/vendor
+
+*.tmp
+
+/work
