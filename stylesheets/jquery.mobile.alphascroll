@@ -2,9 +2,8 @@
   color: #666;
   text-shadow: none;
   list-style: none;
-  position: absolute;
-  top: 25px;
-  right: 17px;
+  top: 7px;
+  right: 7px;
   z-index: 1001;
   font-size: 11px;
   font-weight: bold;
