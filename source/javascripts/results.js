@@ -1,5 +1,8 @@
 $(function () { 
 
+  $(".alphascroll a, .alphascroll li").tooltip();
+
+
   // this hide the advanced search
   // 
   $("label.advancedSearch").hide();
@@ -44,8 +47,9 @@ $(function () {
   }
 
 
-  // slick grid
+  // slick grid slickgrid
   // 
+
   var thisGrid = $("[data-snac-grid]");
   if (thisGrid.length) {
     // XTF remote data model
@@ -54,47 +58,52 @@ $(function () {
     // formater functions
     //
     var storyTitleFormatter = function (row, cell, value, columnDef, dataContext) {
-      s ="<a href='" + dataContext["path"].replace('default:', '/xtf/view?docId=') + "'>" +
+      s ="★ <a href='" + dataContext["path"].replace('default:', '/xtf/view?docId=') + "'>" +
               dataContext["identity"] + "</a>";
       return s;
     };
 
     var browseFormatter = function (row, cell, value, columnDef, dataContext) {
-      s = '';
+      s = '★ ';
       if (dataContext['selected']) {
-        s = "<b>" + dataContext['value'] + "</b>"; 
+        s = s + "<b>" + dataContext['value'] + "</b>"; 
       } else {
-        s = "<a href='" + dataContext['selectLink'] + "'>" + 
+        s = s + "<a href='" + dataContext['selectLink'] + "'>" + 
                 dataContext['value'] + "</a>";
       }
       return s;
     };
 
-    var entityTypeFormatter = function (row, cell, value, columnDef, dataContext) {
+    var iconsFormatter = function (row, cell, value, columnDef, dataContext) {
       var type = dataContext['facet-entityType'];
+      var out = "";
       if (type == 'person') {
-          return '&#x1F466'; // 👦' 1F466
+          out = out +  '&#x1F466; ' ; // 👦' 1F466
       } else if (type == 'corporateBody') {
-          return '&#x1F3E2;' // 🏢' 1F3E2
+          out = out +  '&#x1F3E2; ' // 🏢' 1F3E2
       } else if (type == 'family') {
-          return '&#x1F46A;' // 👪' 1F46A
+          out = out + '&#x1F46A; ' // 👪' 1F46A
       }
-    }
-
-    var check = function () {
-      if (Math.floor(Math.random()*2)) {
-          return '✓';
+      if (dataContext['facet-recordLevel'] == 'hasBiogHist') {
+          out = out +  '&#x24B7; ' // Ⓑ 24B7
       }
-    }
-  
-    var number = function () {
-      var rnd = ((Math.random() + Math.random() + Math.random() + Math.random() + Math.random() + Math.random()) - 3) / 3;
-      return parseInt(Math.max(0, rnd * 100));  
+      if (dataContext['facet-Wikipedia']) {
+          out = out +  '&#x24CC; ' // Ⓦ 24CC 
+      }
+      out = out + dataContext['count-ArchivalResource']
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return out;
     }
   
     var index1 = function (row, cell, value, columnDef, dataContext) {
       s = dataContext['index'] + 1;
       return s;
+    };
+
+    var starFormatter = function (row, cell, value, columnDef, dataContext) {
+      out = '<label><input type="checkbox"></label>';
+      return '★';
     };
   
     /* var dateFormatter = function (row, cell, value, columnDef, dataContext) {
@@ -103,27 +112,32 @@ $(function () {
 
     var columns = [
       // {id: "num", name: "#", formatter: index1, width: 50},
-      {id: "identity", name: "Results", width: 300, formatter: storyTitleFormatter},
-      {id: "facet-entityType", name: "type", formatter: entityTypeFormatter, width: 100},
+      // {id: "save", name: "", formatter: starFormatter, maxWidth: 40},
+      {id: "identity", name: "Results", formatter: storyTitleFormatter, minWidth: 300},
+      {id: "icons", name: "", formatter: iconsFormatter, width: 100, maxWidth: 300},
       // {id: "fromDate", name: "from", field:"fromDate" , width: 100},
       // {id: "toDate", name: "to", field:"toDate", width: 100},
-      {id: "facet-recordLevel", name: "hasBioghist", formatter: check, width: 100},
-      {id: "facet-recordLevel", name: "Wikipedia", formatter: check, width: 100},
-      {id: "facet-recordLevel", name: "Collections", formatter: number, width: 100}
+      // {id: "facet-recordLevel", name: "hasBioghist", formatter: check, width: 100},
+      // {id: "facet-recordLevel", name: "Wikipedia", formatter: check, width: 100},
+      // {id: "facet-recordLevel", name: "Collections", formatter: number, width: 100}
     ];
 
     var options = {
       // rowHeight: 64,
-      editable: false,
+      editable: true,
       enableAddRow: false,
       enableColumnReorder: false,
       forceFitColumns: true,
+      // autoHeight: true,
       enableCellNavigation: true
     };
 
     var loadingIndicator = null;
 
     grid = new Slick.Grid("[data-snac-grid]", loader.data, columns, options);
+    $( window ).resize(function() {
+      grid.resizeCanvas();
+    });
 
     grid.onViewportChanged.subscribe(function (e, args) {
       var vp = grid.getViewport();

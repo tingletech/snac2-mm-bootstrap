@@ -4,10 +4,10 @@ results: Showing 1,234,234 names
 ---
 <%= partial "searchby" %>
 <%= partial "browsefilterby" %>
-<div style="position:relative;">
-    <div 
+<div>
+  <%= partial "AZletters" %>
+    <div class="col-xs-11"
       data-snac-grid='{"url":"http://socialarchive.iath.virginia.edu:8888/xtf/search?rmode=slickgrid&startDoc=1&sortGroupsBy=totalDocs&facet-identityAZ=A"}'>
       <div class="alert alert-danger">Javascript failed.  Please contact the system operator.</div>
     </div>
-  <%= partial "AZletters" %>
 </div>
