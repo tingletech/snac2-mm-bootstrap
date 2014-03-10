@@ -142,7 +142,10 @@ $(function () {
       if (dataContext['facet-Wikipedia']) {
           out = out +  '&#x24CC; ' // Ⓦ 24CC 
       }
-      out = out + dataContext['count-ArchivalResource']
+      return out;
+    }
+    var collectionCount = function (row, cell, value, columnDef, dataContext) {
+      out = dataContext['count-ArchivalResource']
                   .toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       return out;
@@ -165,8 +168,9 @@ $(function () {
     var columns = [
       // {id: "num", name: "#", formatter: index1, width: 50},
       // {id: "save", name: "", formatter: starFormatter, maxWidth: 40},
-      {id: "identity", name: "Results", formatter: storyTitleFormatter, minWidth: 300},
-      {id: "icons", name: "", formatter: iconsFormatter, width: 100, maxWidth: 300},
+      {id: "identity", name: "Results", formatter: storyTitleFormatter, minWidth: 400},
+      {id: "icons", name: "", formatter: iconsFormatter, width: 100, maxWidth: 150},
+      {id: "icons", name: "related collections", formatter: collectionCount, width: 100, maxWidth: 150},
       // {id: "fromDate", name: "from", field:"fromDate" , width: 100},
       // {id: "toDate", name: "to", field:"toDate", width: 100},
       // {id: "facet-recordLevel", name: "hasBioghist", formatter: check, width: 100},
