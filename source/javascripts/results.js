@@ -1,7 +1,7 @@
 $(function () { 
   // example from http://stackoverflow.com/a/21533204/1763984
   // instantiate the bloodhound suggestion engine
-  var movies = new Bloodhound({
+  var engine = new Bloodhound({
       datumTokenizer: function (d) {
           return Bloodhound.tokenizers.whitespace(d.value);
       },
@@ -19,14 +19,13 @@ $(function () {
   });
 
   // initialize the bloodhound suggestion engine
-  movies.initialize();
+  engine.initialize();
 
   // instantiate the typeahead UI
   $('#userInput').typeahead(null, {
       displayKey: 'value',
-      source: movies.ttAdapter()
+      source: engine.ttAdapter()
   });
-
   $(".alphascroll a, .alphascroll li").tooltip();
 
 
