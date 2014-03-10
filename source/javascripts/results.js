@@ -30,11 +30,12 @@ $(function () {
         { value: 'Yamada, Mitsuye'}
       ],
       remote: {
-          url: 'http://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=470fd2ec8853e25d2f8d86f685d2270e',
-          filter: function (movies) {
-              return $.map(movies.results, function (movie) {
+          url: 'http://socialarchive.iath.virginia.edu/xtf/search?autocomplete=yes;term=%QUERY',
+          ajax: { dataType: 'jsonp' },
+          filter: function (identities) {
+              return $.map(identities, function (identity) {
                   return {
-                      value: movie.original_title
+                      value: identity
                   };
               });
           }
@@ -45,12 +46,14 @@ $(function () {
   engine.initialize();
 
   // instantiate the typeahead UI
-  $('#userInput').typeahead(null, {
-      displayKey: 'value',
+  $('#userInput').typeahead({
+      minLength: 3,
+      highlight: true,
+  },{
       source: engine.ttAdapter()
   });
-  $(".alphascroll a, .alphascroll li").tooltip();
 
+  $(".alphascroll a, .alphascroll li").tooltip();
 
   // this hide the advanced search
   // 
