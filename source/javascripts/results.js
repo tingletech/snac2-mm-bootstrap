@@ -1,4 +1,31 @@
 $(function () { 
+  // example from http://stackoverflow.com/a/21533204/1763984
+  // instantiate the bloodhound suggestion engine
+  var movies = new Bloodhound({
+      datumTokenizer: function (d) {
+          return Bloodhound.tokenizers.whitespace(d.value);
+      },
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      remote: {
+          url: 'http://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=470fd2ec8853e25d2f8d86f685d2270e',
+          filter: function (movies) {
+              return $.map(movies.results, function (movie) {
+                  return {
+                      value: movie.original_title
+                  };
+              });
+          }
+      }
+  });
+
+  // initialize the bloodhound suggestion engine
+  movies.initialize();
+
+  // instantiate the typeahead UI
+  $('#userInput').typeahead(null, {
+      displayKey: 'value',
+      source: movies.ttAdapter()
+  });
 
   $(".alphascroll a, .alphascroll li").tooltip();
 

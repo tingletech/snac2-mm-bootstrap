@@ -21,6 +21,7 @@
 //= require "store.js/store.js"
 //= require "enquire/dist/enquire"
 //= require "jquery.mobilemenu/jquery.mobilemenu.js"
+//= require "typeahead.js/dist/typeahead.bundle.js"
 
 
   // swap SNAC logos on bigger screens
