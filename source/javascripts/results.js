@@ -6,6 +6,29 @@ $(function () {
           return Bloodhound.tokenizers.whitespace(d.value);
       },
       queryTokenizer: Bloodhound.tokenizers.whitespace,
+      local: [
+        { value: 'Anthony, Susan B'},
+        { value: 'Berkeley Free Church'},
+        { value: 'Bernstein, Leonard, 1918-'},
+        { value: 'Block, Herbert, 1909-2001'},
+        { value: 'Bush, Vannevar, 1890-1974'},
+        { value: 'Cha, Theresa Hak Kyung'},
+        { value: 'Feynman, Richard Phillips, 1918-1988'},
+        { value: 'Fitzgerald, Ella, 1918-1996'},
+        { value: 'Frankfurter, Felix, 1882-1965'},
+        { value: 'Franklin, Benjamin, 1706-1790'},
+        { value: 'Fuller, R. Buckminster (Richard Buckminster), 1895-1983'},
+        { value: 'Hamilton, Alexander, 1757-1804'},
+        { value: 'Luce, Clare Boothe, 1903-1987'},
+        { value: 'Oppenheimer, J. Robert, 1904-1967'},
+        { value: 'Patton family'},
+        { value: 'Patton, George S. (George Smith), 1885-1945'},
+        { value: 'Sontag, Susan, 1933-2004'},
+        { value: 'Washington, George, 1732-1799'},
+        { value: 'Whitman, Walt, 1819-1892'},
+        { value: 'Wright, Lloyd, 1890-1978'},
+        { value: 'Yamada, Mitsuye'}
+      ],
       remote: {
           url: 'http://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=470fd2ec8853e25d2f8d86f685d2270e',
           filter: function (movies) {
