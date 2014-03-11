@@ -34,6 +34,7 @@ star: star
           <div>Image from Wikipedia</div>
         </a>
       </div>
+
       <%= partial "sample_data_biogist" %>
 
       <p class="source">From the description of Justice docket, 1828-1832. (New York State Historical Documents). WorldCat record id: 155441189</p>
@@ -43,90 +44,70 @@ star: star
     </div>
     <div class="relations">
       <h2 class="tophead">Related links to:</h2>
-      <form><input placeholder="search links"/>
-        <input type="submit" value="🔍"/>
-      </form>
-      <div class="related panel-group" id="related">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#relations" href="#collapseOne">
-                Archival Collections
-                <span class="badge pull-right">543</span>
-              </a>
-            </h4>
-          </div>
-          <div id="collapseOne" class="panel-collapse collapse"  style="max-height:400px; overflow: auto;">
+      <div class="related" id="related">
+        <div class="panel">
+          <h4>
+            <a data-toggle="collapse" data-parent="#relations" href="#relatedCollections">
+              Archival Collections
+              <span class="badge pull-right">543</span>
+            </a>
+          </h4>
+          <div id="relatedCollections" class="collapse">
             <div class="panel-body">
-
-      <%= partial "sample_data_relations" %>
-
+              <%= partial "sample_data_relations" %>
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#relations" href="#collapseTwo">
-                Library Resources
-                <span class="badge pull-right">5</span>
-              </a>
-            </h4>
-          </div>
-          <div id="collapseTwo" class="panel-collapse collapse">
+        <div class="panel">
+          <h4>
+            <a data-toggle="collapse" data-parent="#relations" href="#relatedWorks">
+              Library Resources
+              <span class="badge pull-right">5</span>
+            </a>
+          </h4>
+          <div id="relatedWorks" class="collapse">
             <div class="panel-body">
-
-
-      <%= partial "sample_data_resources" %>
-
+              <%= partial "sample_data_resources" %>
             </div>
           </div>
         </div>
         <h2>Related names in snac:</h2>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#relations" href="#collapseOneXX">
-                People
-                <span class="badge pull-right">543</span>
-              </a>
-            </h4>
-          </div>
-          <div id="collapseOneXX" class="panel-collapse collapse">
+        <div class="panel">
+          <h4>
+            <a data-toggle="collapse" data-parent="#relations" href="#relatedPeople">
+              People
+              <span class="badge pull-right">543</span>
+            </a>
+          </h4>
+          <div id="relatedPeople" class="panel-collapse collapse">
             <div class="panel-body">
-
-      <%= partial "sample_data_people" %>
-
+              <%= partial "sample_data_people" %>
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#relations" href="#collapseOneXY">
-                Familes
-                <span class="badge pull-right">543</span>
-              </a>
-            </h4>
-          </div>
-          <div id="collapseOneXY" class="panel-collapse collapse">
+        <div class="panel">
+          <h4>
+            <a data-toggle="collapse" data-parent="#relations" href="#relatedFamilies">
+              Familes
+              <span class="badge pull-right">543</span>
+            </a>
+          </h4>
+          <div id="relatedFamilies" class="collapse">
             <div class="panel-body">
-[split famalies out of people]
+              [split famalies out of people]
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#relations" href="#collapseOneXZ">
-                Organizations
-                <span class="badge pull-right">543</span>
-              </a>
-            </h4>
-          </div>
-          <div id="collapseOneXZ" class="panel-collapse collapse">
+        <div class="panel">
+          <h4>
+            <a data-toggle="collapse" data-parent="#relations" href="#relatedOrganizations">
+              Organizations
+              <span class="badge pull-right">543</span>
+            </a>
+          </h4>
+          <div id="relatedOrganizations" class="collapse">
             <div class="panel-body">
-      <%= partial "sample_data_corporate" %>
+              <%= partial "sample_data_corporate" %>
             </div>
           </div>
         </div>
