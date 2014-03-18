@@ -25,7 +25,8 @@
     "jquery.mobilemenu": "*",
     "typeahead.js": "~0.10.1",
     "list.js": "~1.1.0",
-    "typeahead.js-bootstrap3.less": "hyspace/typeahead.js-bootstrap3.less#~0.2.2"
+    "typeahead.js-bootstrap3.less": "hyspace/typeahead.js-bootstrap3.less#~0.2.2",
+    "list.fuzzysearch.js": "~0.1.0"
   },
   "resolutions": {
     "jquery": "1"

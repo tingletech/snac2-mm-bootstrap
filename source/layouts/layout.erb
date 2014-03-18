@@ -30,9 +30,11 @@
     <%= partial "footer" %>
     <!-- /.container -->
     <%= javascript_include_tag  "all", :charset => "utf-8" %>
-    <%= javascript_include_tag  "sample", "results", :charset => 'utf-8' %>
-    <% if data.page.star == 'star' %>
-      <%= javascript_include_tag  "star", :charset => 'utf-8' %>
+    <% if data.page.identity != 'identity' %>
+      <%= javascript_include_tag  "sample", "results", :charset => 'utf-8' %>
+    <% end %>
+    <% if data.page.identity == 'identity' %>
+      <%= javascript_include_tag "identity", :charset => 'utf-8' %>
     <% end %>
   </body>
 </html>

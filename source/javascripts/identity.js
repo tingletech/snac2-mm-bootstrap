@@ -1,5 +1,14 @@
 // http://stackoverflow.com/questions/899812/best-practices-for-writing-javascript-widgets
 (function() {
+    // search in page
+
+    var monkeyList = new List('identity', { 
+        valueNames: ['name'], 
+        plugins: [ ListFuzzySearch() ] 
+    });
+    
+
+    // stars and local storage
     $(function() {
         if (store.enabled) {
             var state1 = "add to list";
