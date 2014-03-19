@@ -22,7 +22,7 @@
 //= require "enquire/dist/enquire"
 //= require "jquery.mobilemenu/jquery.mobilemenu.js"
 //= require "typeahead.js/dist/typeahead.bundle.js"
-
+//= require "list.js/dist/list.js"
 
   // swap SNAC logos on bigger screens
   var swapImages = function() {

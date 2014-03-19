@@ -1,12 +1,41 @@
 // http://stackoverflow.com/questions/899812/best-practices-for-writing-javascript-widgets
 (function() {
     // search in page
-
+/*
     var monkeyList = new List('identity', { 
         valueNames: ['name'], 
         plugins: [ ListFuzzySearch() ] 
     });
-    
+ */   
+
+$(function() {
+  values = {};
+  $('span.Location').each(function(index, value){
+    text = $(value).text();
+    if (text in values) {
+      values[text]++;
+    } else {
+      values[text]=1;
+    }
+  });
+
+  var locations = [];
+  for (var key in values) {
+    if (values.hasOwnProperty(key)) {
+      locations.push({ "location": key, "count": values[key] });
+    }
+  }
+
+  var options = {
+    valueNames: [ 'location', 'count' ],
+    item: '<li><span class="location"></span> (<span class="count"></span>)</li>'
+  };
+
+  var userList = new List('sample_collections', options, locations);
+
+});
+
+
 
     // stars and local storage
     $(function() {
