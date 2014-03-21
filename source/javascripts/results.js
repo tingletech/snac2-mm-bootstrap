@@ -1,4 +1,9 @@
 $(function () { 
+
+  // stars
+  if (store.enabled) {
+  }
+
   // example from http://stackoverflow.com/a/21533204/1763984
   // instantiate the bloodhound suggestion engine
   var engine = new Bloodhound({
@@ -109,20 +114,12 @@ $(function () {
 
     // formater functions
     //
-    var storyTitleFormatter = function (row, cell, value, columnDef, dataContext) {
-      s ="★ <a href='" + dataContext["path"].replace('default:', '/xtf/view?docId=') + "'>" +
-              dataContext["identity"] + "</a>";
-      return s;
-    };
 
-    var browseFormatter = function (row, cell, value, columnDef, dataContext) {
-      s = '★ ';
-      if (dataContext['selected']) {
-        s = s + "<b>" + dataContext['value'] + "</b>"; 
-      } else {
-        s = s + "<a href='" + dataContext['selectLink'] + "'>" + 
-                dataContext['value'] + "</a>";
-      }
+    var star = '<input type="checkbox"><label>★</label></input>';
+
+    var storyTitleFormatter = function (row, cell, value, columnDef, dataContext) {
+      s = star + "<a href='" + dataContext["path"].replace('default:', '/xtf/view?docId=') + "'>" +
+              dataContext["identity"] + "</a>";
       return s;
     };
 
