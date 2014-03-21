@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<div>
+<div class="list">
   <ul class="nav nav-tabs">
     <li class="active">
       <a href="#creatorOf" data-toggle="tab">creator of</a>
@@ -8,8 +7,15 @@
       <a href="#referencedIn" data-toggle="tab">referenced in</a>
     </li>
   </ul>
-  <div class="tab-content">
-  <div class="tab-pane active" id="creatorOf">
+  <div class="tab-content" id="creatorOf">
+  <button class="sort" data-sort="Location">
+    Sort by location
+  </button>
+  <button class="sort" data-sort="Collection">
+    Sort by collection title
+  </button>
+  <input class="search" placeholder="Search" />
+  <div class="tab-pane active list">
     <div>
       <a href="http://www.worldcat.org/oclc/46354860" class="Collection">Adams family. Adams-Hull collection, 1775-1856.</a>
       <span class="Location">Massachusetts Historical Society</span>

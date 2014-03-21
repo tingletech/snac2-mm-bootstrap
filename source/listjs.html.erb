@@ -60,13 +60,24 @@ input:focus {
 }
 </style>
 <div id="sample_collections">
-  <input class="search" placeholder="Search" />
-  <button class="sort" data-sort="location">
-    Sort by location
-  </button>
-  <button class="sort" data-sort="count">
-    Sort by count
-  </button>
-  <ul class="list"></ul>
-  <%= partial "sample_data_collections" %>
+  <div id="location_list">
+    <input class="search" placeholder="Search" />
+    <button class="sort" data-sort="location">
+      Sort by location
+    </button>
+    <button class="sort" data-sort="count">
+      Sort by count
+    </button>
+    <ul class="list"></ul>
+  </div>
+  <div id="related_collections">
+    <button class="sort" data-sort="Location">
+      Sort by location
+    </button>
+    <button class="sort" data-sort="Collection">
+      Sort by collection title
+    </button>
+    <input class="search" placeholder="Search" />
+    <%= partial "sample_data_collections" %>
+  </div>
 </div>

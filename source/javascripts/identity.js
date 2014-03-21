@@ -31,8 +31,8 @@ $(function() {
     item: '<li><span class="location"></span> (<span class="count"></span>)</li>'
   };
 
-  var userList = new List('sample_collections', options, locations);
-
+  var locationList = new List('location_list', options, locations);
+  var relatecCollections = new List('creatorOf', {valueNames: [ 'Collection', 'Location' ]});
 });
 
 
