@@ -115,7 +115,17 @@ $(function () {
     // formater functions
     //
 
-    var star = '<input type="checkbox"><label>★</label></input>';
+    var star = '';
+    var starCheck = function () {};
+    if (store.enabled) {
+        star = '<span class="rating"><input type="checkbox"><label>★</label></input></span>';
+        // async post render 
+        starCheck = function (cellNode, row, dataContext, colDef) {
+            // check localstorage to see if this should be checked
+            console.log($(cellNode).find('.rating')[0]);
+            console.log($(cellNode).find('a').attr('href'));
+        }
+    }
 
     var storyTitleFormatter = function (row, cell, value, columnDef, dataContext) {
       s = star + "<a href='" + dataContext["path"].replace('default:', '/xtf/view?docId=') + "'>" +
@@ -141,53 +151,37 @@ $(function () {
       }
       return out;
     }
+
     var collectionCount = function (row, cell, value, columnDef, dataContext) {
       out = dataContext['count-ArchivalResource']
                   .toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       return out;
     }
-  
-    var index1 = function (row, cell, value, columnDef, dataContext) {
-      s = dataContext['index'] + 1;
-      return s;
-    };
-
-    var starFormatter = function (row, cell, value, columnDef, dataContext) {
-      out = '<label><input type="checkbox"></label>';
-      return '★';
-    };
-  
-    /* var dateFormatter = function (row, cell, value, columnDef, dataContext) {
-      return (value.getMonth()+1) + "/" + value.getDate() + "/" + value.getFullYear();
-    }; */
-
+ 
     var columns = [
-      // {id: "num", name: "#", formatter: index1, width: 50},
-      // {id: "save", name: "", formatter: starFormatter, maxWidth: 40},
-      {id: "identity", name: "Results", formatter: storyTitleFormatter, minWidth: 400},
-      {id: "icons", name: "", formatter: iconsFormatter, width: 100, maxWidth: 150},
-      {id: "icons", name: "related collections", formatter: collectionCount, width: 100, maxWidth: 150},
-      // {id: "fromDate", name: "from", field:"fromDate" , width: 100},
-      // {id: "toDate", name: "to", field:"toDate", width: 100},
-      // {id: "facet-recordLevel", name: "hasBioghist", formatter: check, width: 100},
-      // {id: "facet-recordLevel", name: "Wikipedia", formatter: check, width: 100},
-      // {id: "facet-recordLevel", name: "Collections", formatter: number, width: 100}
+      { id: "identity", name: "Results", minWidth: 400, sortable: true,
+        formatter: storyTitleFormatter, asyncPostRender: starCheck
+      },
+      { id: "icons", name: "", formatter: iconsFormatter, width: 100, maxWidth: 150},
+      { id: "collections", name: "related collections", width: 100, maxWidth: 150,
+        formatter: collectionCount, sortable: true
+      }
     ];
 
     var options = {
-      // rowHeight: 64,
       editable: true,
       enableAddRow: false,
       enableColumnReorder: false,
       forceFitColumns: true,
-      // autoHeight: true,
-      enableCellNavigation: true
+      enableCellNavigation: true,
+      enableAsyncPostRender: true
     };
 
     var loadingIndicator = null;
 
     grid = new Slick.Grid("[data-snac-grid]", loader.data, columns, options);
+
     $( window ).resize(function() {
       grid.resizeCanvas();
     });
@@ -201,6 +195,11 @@ $(function () {
       loader.setSort(args.sortCol.field, args.sortAsc ? 1 : -1);
       var vp = grid.getViewport();
       loader.ensureData(vp.top, vp.bottom);
+    });
+
+    grid.onClick.subscribe(function (e, args) {
+        // turns stars on and off and do stuff with local storage
+        console.log(e, args);
     });
 
     loader.onDataLoading.subscribe(function () {
@@ -229,8 +228,8 @@ $(function () {
     });
 
     // loader.setSearch($("#txtSearch").val());
-    loader.setSort("totalDocs", 1);
-    // grid.setSortColumn("value", false);
+    // loader.setSort("collections", 1);
+    grid.setSortColumn("identity", true);
 
     // load the first page
     grid.onViewportChanged.notify();
