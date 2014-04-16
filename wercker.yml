@@ -1,4 +1,4 @@
-box: wercker/rvm
+box: joost/nodejs-rvm@1.0.5
 build:
     # http://devcenter.wercker.com/articles/languages/ruby.html
     steps:
