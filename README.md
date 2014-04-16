@@ -17,3 +17,5 @@ bundle                         # install middle man / ruby asset pipline
 bundle exec middleman          # test server for middleman
 bundle exec middleman build    # build static templates
 ```
+
+[![wercker status](https://app.wercker.com/status/6bb6c45300b58381edf1e5935c540e14/s/master "wercker status")](https://app.wercker.com/project/bykey/6bb6c45300b58381edf1e5935c540e14)
