@@ -4,8 +4,9 @@ build:
     steps:
         - bundle-install
 
-        - npm-install@1.0.5:
-            options: -g bower
+        - npm-install:
+            package: bower
+            options: -g 
 
         - script:
             name: bower install
