@@ -69,7 +69,7 @@ configure :build do
   # activate :asset_hash, :ignore => %r{^stylesheets/fonts/.*}
 
   # Use relative URLs
-  #activate :relative_assets
+  activate :relative_assets
 
   # Or use a different image path
   #set :http_path, "/Content/images/"
