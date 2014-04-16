@@ -5,7 +5,6 @@ build:
         - bundle-install
 
         - npm-install:
-            package: bower
             options: -g 
 
         - script:
