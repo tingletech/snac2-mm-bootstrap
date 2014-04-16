@@ -69,14 +69,14 @@ configure :build do
   # activate :asset_hash, :ignore => %r{^stylesheets/fonts/.*}
 
   # Use relative URLs
-  activate :relative_assets
+  #activate :relative_assets
 
   # Or use a different image path
   #set :http_path, "/Content/images/"
 
-  #set :css_dir, 'cpf2html/mm-css'
-  # set :js_dir, 'cpf2html/mm-js'
-  # set :images_dir, 'cpf2html/mm-images'
+  #set :css_dir, 'mayday/css'
+  #set :js_dir, 'mayday/js'
+  #set :images_dir, 'mayday/images'
 
   activate :favicon_maker
 

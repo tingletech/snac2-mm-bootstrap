@@ -35,21 +35,13 @@ div#identity {
     @media (min-width: @screen-md-min) {
       border-right: 3px rgb(118, 176, 188) solid;
     }
-    .panel { 
+    .panel {
       &:extend(.panel-default all);
-      color: #333;
-      background-color: #f5f5f5;
-      border-color: #ddd;
-      border-top-color: #ddd;
-      h4 {
-        &:extend(.panel-title all);
-        &:extend(.panel-heading all);
-      }
-      .collapse {
-        max-height:400px;
-        overflow: auto;
-        &:extend(.panel-collapse all);
-        background-color: #fff;
+      div {
+        .panel-heading;
+        h4 {
+          .panel-title;
+        }
       }
     }
     .Location {

@@ -39,7 +39,7 @@ $(function() {
 
     // stars and local storage
     $(function() {
-        if (store.enabled) {
+        if (store.enabled && 1==2) {
             var state1 = "add to list";
             var state2 = "remove from list";
             // Will be true if bootstrap 3 is loaded, false if bootstrap 2 or no bootstrap
