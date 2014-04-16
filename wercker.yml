@@ -4,12 +4,11 @@ build:
     steps:
         - bundle-install
 
-        - npm-install:
-            options: -g
+        - npm-install
 
         - script:
             name: bower install
-            code: bower install
+            code: ./node_modules/.bin/bower install
 
         - script:
             name: middleman build
