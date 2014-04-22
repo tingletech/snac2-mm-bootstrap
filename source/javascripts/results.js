@@ -117,7 +117,7 @@ $(function () {
 
     var star = '';
     var starCheck = function () {};
-    if (store.enabled) {
+    if (store.enabled && false ) {
         star = '<span class="rating"><input type="checkbox"><label>★</label></input></span>';
         // async post render 
         starCheck = function (cellNode, row, dataContext, colDef) {
@@ -156,16 +156,16 @@ $(function () {
       out = dataContext['count-ArchivalResource']
                   .toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      return out;
+      return out + "&#160;&#160;";
     }
  
     var columns = [
       { id: "identity", name: "Results", minWidth: 400, sortable: true,
-        formatter: storyTitleFormatter, asyncPostRender: starCheck
+        formatter: storyTitleFormatter, asyncPostRender: starCheck 
       },
       { id: "icons", name: "", formatter: iconsFormatter, width: 100, maxWidth: 150},
-      { id: "collections", name: "related collections", width: 100, maxWidth: 150,
-        formatter: collectionCount, sortable: true
+      { id: "collections", name: "Related Collections", width: 100, maxWidth: 150,
+        formatter: collectionCount, sortable: true, cssClass: "right"
       }
     ];
 
