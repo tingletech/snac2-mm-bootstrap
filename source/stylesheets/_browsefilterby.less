@@ -1,3 +1,39 @@
+
+.W_icon, .C_icon, .B_icon {
+  font-style: normal;
+  font-weight: bold;
+}
+
+.W_icon:before {
+  content: " 🅦 "; // NEGATIVE CIRCLED LATIN CAPITAL LETTER
+  color: rgb(249,144,0);
+}
+
+.C_icon:before {
+  content: " 🅒 ";
+  color: rgb(57,137,47);
+}
+
+.B_icon:before {
+  content: " 🅑 ";
+  color: rgb(173,0,95);
+}
+
+.snac-icon-person:before {
+  content: " ⺅ "; // radical for person
+  color: rgb(0,148,132);
+}
+
+.snac-icon-family:before {
+  content: " ䷤ "; // hexagram for the family
+  color: rgb(167,28,32);
+}
+
+.snac-icon-organization:before {
+  content: " ▦ "; // SQUARE WITH ORTHOGONAL CROSSHATCH FILL
+  color: rgb(82,38,153);
+}
+
 div#browsefilterby {
   >div {
     .row;
@@ -21,6 +57,7 @@ div#browsefilterby {
     .row;
     border-bottom: 1px solid #dddddd;
     div.filternav {
+      text-align: right;
       .make-sm-column(6);
       .make-sm-column-push(6);
       .text-muted;
@@ -39,6 +76,9 @@ div#browsefilterby {
         .btn;
         .btn-xs;
         .btn-default;
+        i {
+          // font-size: 133%;
+        }
       }
       a.active, button.active {
         .btn-primary

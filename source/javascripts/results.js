@@ -137,17 +137,17 @@ $(function () {
       var type = dataContext['facet-entityType'];
       var out = "";
       if (type == 'person') {
-          out = out +  '&#x1F466; ' ; // 👦' 1F466
+          out = out +  '<span class="snac-icon-person"/>';
       } else if (type == 'corporateBody') {
-          out = out +  '&#x1F3E2; ' // 🏢' 1F3E2
+          out = out +  '<span class="snac-icon-organization"/>'
       } else if (type == 'family') {
-          out = out + '&#x1F46A; ' // 👪' 1F46A
+          out = out + '<span class="snac-icon-family"/>'
       }
       if (dataContext['facet-recordLevel'] == 'hasBiogHist') {
-          out = out +  '&#x24B7; ' // Ⓑ 24B7
+          out = out +  '<i class="B_icon"></i>' // Ⓑ 24B7
       }
       if (dataContext['facet-Wikipedia']) {
-          out = out +  '&#x24CC; ' // Ⓦ 24CC 
+          out = out +  '<i class="W_icon"></i>' // Ⓦ 24CC 
       }
       return out;
     }
@@ -163,7 +163,7 @@ $(function () {
       { id: "identity", name: "Results", minWidth: 400, sortable: true,
         formatter: storyTitleFormatter, asyncPostRender: starCheck 
       },
-      { id: "icons", name: "", formatter: iconsFormatter, width: 100, maxWidth: 150},
+      { id: "icons", name: "Record types", formatter: iconsFormatter, width: 100, maxWidth: 150},
       { id: "collections", name: "Related Collections", width: 100, maxWidth: 150,
         formatter: collectionCount, sortable: true, cssClass: "right"
       }
