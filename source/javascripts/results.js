@@ -160,10 +160,12 @@ $(function () {
     }
  
     var columns = [
+      { id: "icons", name: "Record types", formatter: iconsFormatter, width: 100, maxWidth: 150,
+        cssClass: "right"
+      },
       { id: "identity", name: "Results", minWidth: 400, sortable: true,
         formatter: storyTitleFormatter, asyncPostRender: starCheck 
       },
-      { id: "icons", name: "Record types", formatter: iconsFormatter, width: 100, maxWidth: 150},
       { id: "collections", name: "Related Collections", width: 100, maxWidth: 150,
         formatter: collectionCount, sortable: true, cssClass: "right"
       }
