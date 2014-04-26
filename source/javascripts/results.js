@@ -137,17 +137,17 @@ $(function () {
       var type = dataContext['facet-entityType'];
       var out = "";
       if (type == 'person') {
-          out = out +  '<span class="snac-icon-person"/>';
+          out = out +  '<span class="icon-ind"></span>';
       } else if (type == 'corporateBody') {
-          out = out +  '<span class="snac-icon-organization"/>'
+          out = out +  '<span class="icon-org"></span>'
       } else if (type == 'family') {
-          out = out + '<span class="snac-icon-family"/>'
+          out = out + '<span class="icon-fam"></span>'
       }
       if (dataContext['facet-recordLevel'] == 'hasBiogHist') {
-          out = out +  '<i class="B_icon"></i>' // Ⓑ 24B7
+          out = out +  '<i class="icon-B"></i>' // Ⓑ 24B7
       }
       if (dataContext['facet-Wikipedia']) {
-          out = out +  '<i class="W_icon"></i>' // Ⓦ 24CC 
+          out = out +  '<i class="icon-W"></i>' // Ⓦ 24CC 
       }
       return out;
     }
@@ -236,3 +236,6 @@ $(function () {
 
   }  // end SlickGrid
 });
+
+window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
+grunticon( [ "../stylesheets/grunticon/icons.data.svg.css", "../stylesheets/grunticon/icons.data.png.css", "../stylesheets/grunticon/icons.fallback.css" ] );
