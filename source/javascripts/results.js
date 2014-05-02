@@ -128,8 +128,8 @@ $(function () {
     }
 
     var storyTitleFormatter = function (row, cell, value, columnDef, dataContext) {
-      s = star + "<a href='" + dataContext["path"].replace('default:', '/xtf/view?docId=') + "'>" +
-              dataContext["identity"] + "</a>";
+      s = star + "<a href='" + dataContext["recordIds"] + "'>" +
+              dataContext["identity"] + " </a>";
       return s;
     };
 
