@@ -158,18 +158,43 @@ $(function () {
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       return out + "&#160;&#160;";
     }
- 
-    var columns = [
-      { id: "icons", name: "Record types", formatter: iconsFormatter, width: 100, maxWidth: 150,
-        cssClass: "right"
-      },
-      { id: "identity", name: "Results", minWidth: 400, sortable: true,
-        formatter: storyTitleFormatter, asyncPostRender: starCheck 
-      },
-      { id: "collections", name: "Related Collections", width: 100, maxWidth: 150,
-        formatter: collectionCount, sortable: true, cssClass: "right"
+
+    var browseFormatter = function (row, cell, value, columnDef, dataContext) {
+      s = '';
+      if (dataContext['selected']) {
+        s = "<b>" + dataContext['value'] + "</b>"; 
+      } else {
+        s = "<a href='" + dataContext['selectLink'] + "'>" + 
+              dataContext['value'] + "</a>";
       }
-    ];
+      return s;
+    };
+
+    function get(n){
+      var half = location.search.split(n+'=')[1];
+      return half? decodeURIComponent(half.split('&')[0]):null;
+    }
+    var browseJson = get('browse-json');
+    var columns;
+
+    if (!browseJson) {
+      columns = [
+        { id: "icons", name: "Record types", formatter: iconsFormatter, width: 100, maxWidth: 150,
+          cssClass: "right"
+        },
+        { id: "identity", name: "Results", minWidth: 400, sortable: true,
+          formatter: storyTitleFormatter, asyncPostRender: starCheck
+        },
+        { id: "collections", name: "Related Collections", width: 100, maxWidth: 150,
+          formatter: collectionCount, sortable: true, cssClass: "right"
+        }
+      ];
+    } else {
+      columns = [
+        {id: "value", name: browseJson, field:"value", formatter: browseFormatter, width: 450, sortable: true, resizable: true},
+        {id: "totalDocs", name: "totalDoc", field: "totalDocs", width: 100, sortable: true, resizable: true}
+      ];
+    }
 
     var options = {
       editable: true,
