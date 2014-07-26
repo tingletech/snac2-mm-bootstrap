@@ -23,6 +23,7 @@
 //= require "jquery.mobilemenu/jquery.mobilemenu.js"
 //= require "typeahead.js/dist/typeahead.bundle.js"
 //= require "list.js/dist/list.js"
+//= require "qtip2/jquery.qtip.js"
 
   // swap SNAC logos on bigger screens
   var swapImages = function() {
@@ -67,4 +68,17 @@ $(document).ready(function() {
     "topOptionText" : false,
     "combine" : false
   });
+
+  // qtip2
+  $('a.qt-trigger').each(function(){
+    $(this).qtip({
+      content: $(this).next('.sr-only').html(),
+      hide: { fixed: true, delay: 300 },
+      position: {
+        my: 'bottom center',
+        at: 'top center'
+      }
+    });
+  });
+
 });
