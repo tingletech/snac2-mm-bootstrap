@@ -75,7 +75,11 @@ $(document).ready(function() {
   $('a.qt-trigger').each(function(){
     $(this).qtip({
       content: $(this).next('.sr-only').html(),
-      hide: { fixed: true, delay: 300 },
+      hide: {
+        fixed: true,
+        inactive: 3000,
+        delay: 300
+      },
       position: {
         my: 'bottom center',
         at: 'top center'
@@ -112,6 +116,9 @@ $(document).ready(function() {
   }
 
   // headroom.js
-  $("#snacnav").headroom();
+  $("#snacnav").headroom({
+    offset : 25,
+    tolerance: 10
+  });
 
 });
