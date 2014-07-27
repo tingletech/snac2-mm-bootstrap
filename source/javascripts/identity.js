@@ -1,4 +1,5 @@
 // http://stackoverflow.com/questions/899812/best-practices-for-writing-javascript-widgets
+//= require "list.js/dist/list.js"
 (function() {
     // search in page
 /*
