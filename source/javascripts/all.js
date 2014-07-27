@@ -22,7 +22,7 @@
 //= require "enquire/dist/enquire"
 //= require "jquery.mobilemenu/jquery.mobilemenu.js"
 //= require "typeahead.js/dist/typeahead.bundle.js"
-//= require "list.js/dist/list.js"
+//  require "list.js/dist/list.js"
 //= require "qtip2/jquery.qtip.js"
 
   // swap SNAC logos on bigger screens
@@ -81,4 +81,30 @@ $(document).ready(function() {
     });
   });
 
+  // google event tracking
+  // based on https://support.google.com/analytics/answer/1136920?hl=en
+  if (ga in window){
+
+    // track outbound links
+    $("a[href^='http://']").click(function () {
+      var url = $(this).attr('href')
+      ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+        function () {
+          document.location = url;
+        }
+      });
+      return false;
+    });
+
+    // track XML views
+    $("a[title='raw XML']").click(function () {
+      var url = $(this).attr('href')
+      ga('send', 'event', 'xml', 'click', url, {'hitCallback':
+        function () {
+          document.location = url;
+        }
+      });
+      return false;
+    });
+  }
 });
