@@ -1,5 +1,5 @@
 // http://stackoverflow.com/questions/899812/best-practices-for-writing-javascript-widgets
-//= require "list.js/dist/list.js"
+//  require "list.js/dist/list.js"
 (function() {
     // search in page
 /*
@@ -8,8 +8,7 @@
         plugins: [ ListFuzzySearch() ] 
     });
  */   
-
-$(function() {
+/* $(function() {
   values = {};
   $('span.Location').each(function(index, value){
     text = $(value).text();
@@ -35,6 +34,7 @@ $(function() {
   var locationList = new List('location_list', options, locations);
   var relatecCollections = new List('creatorOf', {valueNames: [ 'Collection', 'Location' ]});
 });
+*/
 
 
 
