@@ -86,7 +86,8 @@ $(document).ready(function() {
   if ('ga' in window){
 
     // track outbound links
-    $("a[href^='http://']").click(function () {
+
+    $('body').on('click',"a[href^='http://']",function() {
       var url = $(this).attr('href')
       ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
         function () {
