@@ -83,7 +83,7 @@ $(document).ready(function() {
 
   // google event tracking
   // based on https://support.google.com/analytics/answer/1136920?hl=en
-  if (ga in window){
+  if ('ga' in window){
 
     // track outbound links
     $("a[href^='http://']").click(function () {
