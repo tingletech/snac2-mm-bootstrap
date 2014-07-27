@@ -28,7 +28,8 @@
     "typeahead.js-bootstrap3.less": "hyspace/typeahead.js-bootstrap3.less#~0.2.2",
     "list.fuzzysearch.js": "~0.1.0",
     "vis": "~1.0.2",
-    "qtip2": "~2.2.0"
+    "qtip2": "~2.2.0",
+    "headroom.js": "~0.6.0"
   },
   "resolutions": {
     "jquery": "1"

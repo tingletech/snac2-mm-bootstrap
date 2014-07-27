@@ -24,6 +24,8 @@
 //= require "typeahead.js/dist/typeahead.bundle.js"
 //  require "list.js/dist/list.js"
 //= require "qtip2/jquery.qtip.js"
+//= require "headroom.js/dist/headroom.js"
+//= require "headroom.js/dist/jQuery.headroom.js"
 
   // swap SNAC logos on bigger screens
   var swapImages = function() {
@@ -108,4 +110,8 @@ $(document).ready(function() {
       return false;
     });
   }
+
+  // headroom.js
+  $("#snacnav").headroom();
+
 });

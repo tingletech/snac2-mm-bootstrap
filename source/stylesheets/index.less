@@ -112,8 +112,15 @@ body {
 
 .limitsheader { margin-top: 5px; } 
 
-   h2, h3 { 
-     // .text-muted; 
-   }
-
 .az-grid a:visited, #identity a:visited { color: #639; }
+
+// headroom.js
+.headroom {
+ .transition(transform 200ms linear;)
+}
+.headroom--pinned {
+  .translate(0%; 0%)
+}
+.headroom--unpinned {
+  .translate(0%; -100%)
+}
