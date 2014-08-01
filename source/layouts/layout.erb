@@ -1,25 +1,15 @@
-<!DOCTYPE html>
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
 <html lang="en">
   <head>
     <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-    <meta name="description" content=""></meta>
-    <meta name="author" content=""></meta>
-
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
-    <link rel="shortcut icon" href="favicon.png" />
     <link rel="icon" type="image/ico" href="favicon.ico" />
 
     <title><%= data.page.title || "snac" %></title>
     <%= stylesheet_link_tag "index", :media => 'all' %>
-    
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <%= javascript_include_tag  "ie/html5shiv", "ie/respond.min.js" %>
-    <![endif]-->
+    <%= javascript_include_tag  "modernizr", :charset => "utf-8" %>
   </head>
 
   <body class="<%= page_classes %>">
@@ -30,11 +20,14 @@
     <%= partial "footer" %>
     <!-- /.container -->
     <%= javascript_include_tag  "all", :charset => "utf-8" %>
-    <% if data.page.identity != 'identity' %>
+    <% if not defined?(data.page.identity) %>
       <%= javascript_include_tag  "sample", "results", :charset => 'utf-8' %>
     <% end %>
     <% if data.page.identity == 'identity' %>
       <%= javascript_include_tag "identity", :charset => 'utf-8' %>
+    <% end %>
+    <% if data.page.identity == 'graphvis' %>
+      <%= javascript_include_tag "graphvis", :charset => 'utf-8' %>
     <% end %>
   </body>
 </html>
