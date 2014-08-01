@@ -19,15 +19,15 @@
 //= require "slick.snacmodel.js"
 //= require "slickgrid/slick.grid.js"
 //= require "store.js/store.js"
-//= require "enquire/dist/enquire"
 //= require "jquery.mobilemenu/jquery.mobilemenu.js"
-//  require "typeahead.js/dist/typeahead.bundle.js"
 //  require "list.js/dist/list.js"
 //= require "qtip2/jquery.qtip.js"
 //= require "headroom.js/dist/headroom.js"
 //= require "headroom.js/dist/jQuery.headroom.js"
 
+
   // swap SNAC logos on bigger screens
+  var swapImagesState = false;
   var swapImages = function() {
     function swapNodes(a, b) { // http://stackoverflow.com/a/698440/1763984
       var aparent= a.parentNode;
@@ -38,9 +38,26 @@
     var left = $("#snacnav-logo-left")[0];
     var right = $("#snacnav-logo-right")[0];
     swapNodes(left, right);
+        swapImagesState = !swapImagesState;
   };
 
+  var mqResize = function() {
+    if (Modernizr.mq("screen and (min-width: 400px)")) {
+      if (!swapImagesState) {
+        swapImages();
+      }
+    } else if (swapImagesState) {
+      // swap them back if the screen goes small
+      swapImages();
+    }
+  }
+
 $(document).ready(function() {
+  mqResize(); 
+  $(window).resize(function() {
+    mqResize();
+  });
+
   // advanced search
   $("label.advancedSearch").hide();
   $("#search_by form").hoverIntent(function () {
@@ -51,28 +68,38 @@ $(document).ready(function() {
     }
   });
 
-  // off canvas
-  $('[data-toggle=offcanvas]').click(function() {
-    $('.row-offcanvas').toggleClass('active');
-  });
+  // google event tracking
+  // based on https://support.google.com/analytics/answer/1136920?hl=en
+  if ('ga' in window){
+    // track outbound links
+    $('body').on('click',"a[href^='http://']",function() {
+      var url = $(this).attr('href')
+      ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+        function () {
+          document.location = url;
+        }
+      });
+      return false;
+    });
+    // track XML views
+    $("a[title='raw XML']").click(function () {
+      var url = $(this).attr('href')
+      ga('send', 'event', 'xml', 'click', url, {'hitCallback':
+        function () {
+          document.location = url;
+        }
+      });
+      return false;
+    });
+  }
 
-  enquire.register("screen and (min-width: 400px)", {
-    match : function() {
-      swapImages();
-    },
-    unmatch : function() {
-      swapImages();
-    }
-  }, true);
   // responsive select
   $('div.filternav ul').mobileMenu({
     "prependTo": $('div.filternav span'),
     "topOptionText" : false,
     "combine" : false
   });
-});
 
-$(document).ready(function() {
   // qtip2
   $('a.qt-trigger').each(function(){
     $(this).qtip({
@@ -89,44 +116,11 @@ $(document).ready(function() {
     });
   });
 
-});
 
-$(document).ready(function() {
-  // google event tracking
-  // based on https://support.google.com/analytics/answer/1136920?hl=en
-  if ('ga' in window){
-
-    // track outbound links
-
-    $('body').on('click',"a[href^='http://']",function() {
-      var url = $(this).attr('href')
-      ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
-        function () {
-          document.location = url;
-        }
-      });
-      return false;
-    });
-
-    // track XML views
-    $("a[title='raw XML']").click(function () {
-      var url = $(this).attr('href')
-      ga('send', 'event', 'xml', 'click', url, {'hitCallback':
-        function () {
-          document.location = url;
-        }
-      });
-      return false;
-    });
-  }
-});
-
-$(document).ready(function() {
 
   // headroom.js
   $("#snacnav").headroom({
     offset : 25,
     tolerance: 10
   });
-
 });
