@@ -1,9 +1,13 @@
-$(function () { 
+//= require "typeahead.js/dist/typeahead.bundle.js"
+
+$( document ).ready(function() {
 
   // stars
   if (store.enabled) {
   }
+});
 
+$( window ).load(function() {
   // example from http://stackoverflow.com/a/21533204/1763984
   // instantiate the bloodhound suggestion engine
   var engine = new Bloodhound({
@@ -102,7 +106,9 @@ $(function () {
       e.preventDefault();
     }
   }
+});
 
+$( document ).ready(function() {
 
   // slick grid slickgrid
   // 

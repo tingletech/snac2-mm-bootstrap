@@ -21,7 +21,7 @@
 //= require "store.js/store.js"
 //= require "enquire/dist/enquire"
 //= require "jquery.mobilemenu/jquery.mobilemenu.js"
-//= require "typeahead.js/dist/typeahead.bundle.js"
+//  require "typeahead.js/dist/typeahead.bundle.js"
 //  require "list.js/dist/list.js"
 //= require "qtip2/jquery.qtip.js"
 //= require "headroom.js/dist/headroom.js"
@@ -63,14 +63,16 @@ $(document).ready(function() {
     unmatch : function() {
       swapImages();
     }
-  });
+  }, true);
   // responsive select
   $('div.filternav ul').mobileMenu({
     "prependTo": $('div.filternav span'),
     "topOptionText" : false,
     "combine" : false
   });
+});
 
+$(document).ready(function() {
   // qtip2
   $('a.qt-trigger').each(function(){
     $(this).qtip({
@@ -87,6 +89,9 @@ $(document).ready(function() {
     });
   });
 
+});
+
+$(document).ready(function() {
   // google event tracking
   // based on https://support.google.com/analytics/answer/1136920?hl=en
   if ('ga' in window){
@@ -114,6 +119,9 @@ $(document).ready(function() {
       return false;
     });
   }
+});
+
+$(document).ready(function() {
 
   // headroom.js
   $("#snacnav").headroom({
