@@ -24,6 +24,7 @@
 //= require "qtip2/jquery.qtip.js"
 //= require "headroom.js/dist/headroom.js"
 //= require "headroom.js/dist/jQuery.headroom.js"
+//= require "jReject/js/jquery.reject.js"
 
 
   // swap SNAC logos on bigger screens
@@ -56,6 +57,13 @@ $(document).ready(function() {
   mqResize(); 
   $(window).resize(function() {
     mqResize();
+  });
+
+  // reject unsupported browsers
+  $.reject({
+    reject: {
+      msie: 7
+    }
   });
 
   // advanced search
